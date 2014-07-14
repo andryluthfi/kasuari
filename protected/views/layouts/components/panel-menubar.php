@@ -23,7 +23,7 @@
                     'url' => array('/site/index')
                 ),
                 array(
-                    'label' => 'Mulai Bertualan',
+                    'label' => 'Mulai Bertualang',
                     'url' => array('/input/adventure')
                 ),
             ),
