@@ -19,7 +19,7 @@
             <?php $this->renderPartial('//layouts/components/panel-menubar') ?>
         </header>
 
-        <article>
+        <article style="min-height: 390px">
             <?= $content; ?>
         </article>
         <footer>

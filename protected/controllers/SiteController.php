@@ -2,8 +2,6 @@
 
 class SiteController extends ControllerCommon {
 
-   
-
     /**
      * Declares class-based actions.
      */
@@ -45,7 +43,7 @@ class SiteController extends ControllerCommon {
     public function actionIndex() {
         $this->render('index', array('user_profile' => array()));
     }
-    
+
     /**
      * This is the default 'index' action that is invoked
      * when an action is not explicitly requested by users.
@@ -67,29 +65,6 @@ class SiteController extends ControllerCommon {
     }
 
     /**
-     * Displays the contact page
-     */
-    public function actionContact() {
-        $model = new ContactForm;
-        if (isset($_POST['ContactForm'])) {
-            $model->attributes = $_POST['ContactForm'];
-            if ($model->validate()) {
-                $name = '=?UTF-8?B?' . base64_encode($model->name) . '?=';
-                $subject = '=?UTF-8?B?' . base64_encode($model->subject) . '?=';
-                $headers = "From: $name <{$model->email}>\r\n" .
-                        "Reply-To: {$model->email}\r\n" .
-                        "MIME-Version: 1.0\r\n" .
-                        "Content-Type: text/plain; charset=UTF-8";
-
-                mail(Yii::app()->params['adminEmail'], $subject, $model->body, $headers);
-                Yii::app()->user->setFlash('contact', 'Thank you for contacting us. We will respond to you as soon as possible.');
-                $this->refresh();
-            }
-        }
-        $this->render('contact', array('model' => $model));
-    }
-
-    /**
      * Displays the login page
      */
     public function actionLogin() {
@@ -102,6 +77,22 @@ class SiteController extends ControllerCommon {
     public function actionLogout() {
         Yii::app()->user->logout();
         $this->redirect(Yii::app()->homeUrl);
+    }
+
+    /**
+     * Load something partially on AJAX call or something.
+     * @param string $which key for which value to be load
+     */
+    public function actionLoadPartial($which) {
+        header('Content-type: application/json');
+        $values = array();
+        switch ($which) {
+            case 'user-pictureURL':
+                $values['user-pictureURL'] = UserWeb::instance()->getPhotoURL();
+                break;
+        }
+        echo CJSON::encode($values);
+        Yii::app()->end();
     }
 
 }

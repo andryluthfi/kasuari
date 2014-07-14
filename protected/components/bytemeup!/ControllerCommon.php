@@ -94,7 +94,11 @@ class ControllerCommon extends CController {
      * @return boolean whether the action is allowed ?
      */
     public function beforeAction($action) {
-        $this->initJS(array('baseURL' => Yii::app()->baseUrl, 'authenticationURL'=>  $this->createUrl('/administration/authenticate/ask')), array());
+        $this->initJS(array(
+            'baseURL' => Yii::app()->baseUrl,
+            'authenticationURL' => $this->createUrl('/administration/authenticate/ask'),
+            'loadPartial' => $this->createUrl('/site/loadPartial')
+                ), array());
         return parent::beforeAction($action);
     }
 

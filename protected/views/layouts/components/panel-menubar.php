@@ -22,6 +22,10 @@
                     'label' => 'Beranda',
                     'url' => array('/site/index')
                 ),
+                array(
+                    'label' => 'Mulai Bertualan',
+                    'url' => array('/input/adventure')
+                ),
             ),
             'htmlOptions' => array(
                 'class' => 'nav navbar-nav',
@@ -43,7 +47,12 @@
 
                         <div class="row">
                             <div class="col-sm-4">
-                                <img src="<?= UserWeb::instance()->getPhotoURL() ?>" style="padding: 2px; margin-left: 4px; border-radius: 30px" />
+                                <img id="user-picture" src="" style="padding: 2px; margin-left: 4px; border-radius: 30px" />
+                                <script>
+                                    $.get(core.getURL('loadPartial', {which: 'user-pictureURL'}), function(json) {
+                                        $('#user-picture').attr('src', json['user-pictureURL']);
+                                    });
+                                </script>
                             </div>
                             <div class="col-sm-8">
                                 <?= UserWeb::instance()->user()->fname . UserWeb::instance()->user()->lname ?><br/>
@@ -65,3 +74,7 @@
         </ul>
     </div>
 </div>
+
+<script>
+
+</script>

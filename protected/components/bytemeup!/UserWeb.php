@@ -11,6 +11,7 @@ class UserWeb extends CWebUser {
     private $level;
     private $user;
     private $administrator;
+    private $photoURL = null;
 
     /**
      * to checks whether the User is Administrator or not
@@ -119,8 +120,13 @@ class UserWeb extends CWebUser {
     public function getPhotoURL() {
         $userAuth = UserOAuth::model()->findByAttributes(array('user_id' => $this->user()->id));
         $userID = $userAuth->getProfile()->identifier;
-        $curl = Yii::app()->curl->run("http://graph.facebook.com/$userID/picture?redirect=false");
-        return !$curl->hasErrors() ? preg_replace('/.*\"url\".*:.*\"(.+)\",.*/s', '$1', $curl->getData()) : null;
+        if (!$this->hasState('user-pictureURL')) {
+            $curl = Yii::app()->curl->run("http://graph.facebook.com/$userID/picture?redirect=false");
+            if (!$curl->hasErrors()) {
+                $this->setState('user-pictureURL', preg_replace('/.*\"url\".*:.*\"(.+)\",.*/s', '$1', $curl->getData()));
+            }
+        }
+        return $this->getState('user-pictureURL');
     }
 
 }

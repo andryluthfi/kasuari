@@ -8,7 +8,7 @@ class InputController extends ControllerCommon {
     
     public function actionAdventure() {
         $tps = $this->prioritizeTPS();
-        $this->render('adventure');
+        $this->render('adventure', array('tps'=>$tps));
     }
     
     protected function prioritizeTPS() {
