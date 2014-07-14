@@ -35,7 +35,7 @@ class BInput extends BaseModel {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('user_id, tps_id, prabowo_count, jokowi_count, broken_count, timestamp, check_total_count, check_signature', 'required'),
+            array('user_id, tps_id, prabowo_count, jokowi_count, broken_count, timestamp,', 'required'),
             array('user_id, tps_id, prabowo_count, jokowi_count, broken_count, check_total_count, check_signature', 'numerical', 'integerOnly' => true),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
@@ -68,8 +68,8 @@ class BInput extends BaseModel {
             'jokowi_count' => 'Jokowi Count',
             'broken_count' => 'Broken Count',
             'timestamp' => 'Timestamp',
-            'check_total_count' => 'Check Total Count',
-            'check_signature' => 'Check Signature',
+            'check_total_count' => 'Jumlah Total Telah Sama',
+            'check_signature' => 'Tanda Tangan Lengkap',
         );
     }
 

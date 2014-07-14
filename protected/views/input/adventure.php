@@ -35,15 +35,17 @@
     <div class="row">
         <div class="col-md-1">
             <h3>
-                Babak #<?= Input::model()->countByAttributes(array('user_id' => UserWeb::instance()->user()->id)) ?><br/>
+                Babak #<?= @Input::model()->countByAttributes(array('user_id' => UserWeb::instance()->user()->id)) ?><br/>
                 <small>
-                    untuk <?= UserWeb::instance()->user()->fname . " " . UserWeb::instance()->user()->lname ?>
+                    untuk <?= @UserWeb::instance()->user()->fname . " " . @UserWeb::instance()->user()->lname ?>
                 </small>
             </h3>
         </div>
         <div class="col-md-11">
-            <img src="http://scanc1.kpu.go.id/view.php?f=00<?= $tps->kelurahan->kelurahan_id ?><?= $tps->tps_number ?>01" />
+            <img src="http://scanc1.kpu.go.id/viewp.php?f=<?= $tps->kelurahan->kelurahan_number ?><?= $tps->tps_number ?>04.jpg" />
         </div>
     </div>
+    
+    <?= $this->renderPartial('_form',array('input'=>$input))?>
 </div>
 
