@@ -23,8 +23,12 @@
                     'url' => array('/site/index')
                 ),
                 array(
-                    'label' => 'Mulai Bertualan',
+                    'label' => 'Mulai Bertualang',
                     'url' => array('/input/adventure')
+                ),
+                array(
+                    'label' => 'Berangkas',
+                    'url' => array('/input/inventory')
                 ),
             ),
             'htmlOptions' => array(

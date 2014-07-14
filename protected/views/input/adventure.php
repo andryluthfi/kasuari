@@ -34,18 +34,24 @@
 
     <div class="row">
         <div class="col-md-1">
-            <h3>
-                Babak #<?= @Input::model()->countByAttributes(array('user_id' => UserWeb::instance()->user()->id)) ?><br/>
+            <h4>
+                Babak 
+                <i >
+                    #<?= @Input::model()->countByAttributes(array('user_id' => UserWeb::instance()->user()->id)) ?><br/>
+                </i>
                 <small>
                     untuk <?= @UserWeb::instance()->user()->fname . " " . @UserWeb::instance()->user()->lname ?>
                 </small>
-            </h3>
+            </h4>
         </div>
-        <div class="col-md-11">
-            <img src="http://scanc1.kpu.go.id/viewp.php?f=<?= $tps->kelurahan->kelurahan_number ?><?= $tps->tps_number ?>04.jpg" />
+        <div class="col-md-9" style="">
+            <img style='width: 100%; border: 2px solid #b3b3b3' src="http://scanc1.kpu.go.id/viewp.php?f=<?= $tps->kelurahan->kelurahan_number ?><?= $tps->tps_number ?>04.jpg" />
+        </div>
+
+        <div class="col-md-2">
+            <?= $this->renderPartial('_form', array('input' => $input)) ?>
         </div>
     </div>
-    
-    <?= $this->renderPartial('_form',array('input'=>$input,'inputNote'=>$inputNote))?>
+
 </div>
 
