@@ -20,7 +20,7 @@ class InputController extends ControllerCommon {
             $date = date("Y-m-d H:i:s");
             $input->timestamp = $date;
             $input->tps_id = $tps->tps_id;
-            $input->user_id = 123; //dummy
+            $input->user_id = UserWeb::instance()->user()->id; //dummy
             if ($input->save()) {
                 if (isset($_POST['InputNote'])) {
                     $inputNote->attributes = $_POST['InputNote'];
