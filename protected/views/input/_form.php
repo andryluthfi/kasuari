@@ -1,25 +1,21 @@
 <div class="form">
-
     <?php
     $form = $this->beginWidget('CActiveForm', array(
         'id' => 'input-form',
         'enableAjaxValidation' => false,
     ));
     ?>
-
-    <p class="note">Fields with <span class="required">*</span> are required.</p>
-
     <?php echo $form->errorSummary($input); ?>
 
     <div class="row-fluid">
         <div class="span6">
             <?php echo $form->labelEx($input, 'prabowo_count'); ?>
-            <?php echo $form->textField($input, 'prabowo_count', array('size' => 10, 'maxlength' => 10, 'onkeypress' => 'return isNumberKey(event)')); ?>
+            <?php echo $form->textField($input, 'prabowo_count', array('size' => 10, 'maxlength' => 10, 'class'=>'form-control', 'onkeypress' => 'return isNumberKey(event)')); ?>
             <?php echo $form->error($input, 'prabowo_count'); ?>
         </div>
         <div class="span6">
             <?php echo $form->labelEx($input, 'jokowi_count'); ?>
-            <?php echo $form->textField($input, 'jokowi_count', array('size' => 10, 'maxlength' => 10, 'onkeypress' => 'return isNumberKey(event)')); ?>
+            <?php echo $form->textField($input, 'jokowi_count', array('size' => 10, 'maxlength' => 10,  'class'=>'form-control','onkeypress' => 'return isNumberKey(event)')); ?>
             <?php echo $form->error($input, 'jokowi_count'); ?>
         </div>
     </div>
@@ -27,7 +23,7 @@
     <div class="row-fluid">
         <div class="span6">
             <?php echo $form->labelEx($input, 'broken_count'); ?>
-            <?php echo $form->textField($input, 'broken_count', array('size' => 10, 'maxlength' => 10, 'onkeypress' => 'return isNumberKey(event)')); ?>
+            <?php echo $form->textField($input, 'broken_count', array('size' => 10, 'maxlength' => 10,  'class'=>'form-control','onkeypress' => 'return isNumberKey(event)')); ?>
             <?php echo $form->error($input, 'broken_count'); ?>
         </div>
 

@@ -7,6 +7,9 @@
  */
 class InputController extends ControllerCommon {
 
+    /**
+     * Give a random Challenge to User
+     */
     public function actionAdventure() {
         $tps = $this->prioritizeTPS();
         $input = new Input;
@@ -16,9 +19,10 @@ class InputController extends ControllerCommon {
             $date = date("Y-m-d H:i:s");
             $input->timestamp = $date;
             $input->tps_id = $tps->tps_id;
-            $input->user_id = 123; //dummy
-            if ($input->save())
+            $input->user_id = UserWeb::instance()->user()->id; //dummy
+            if ($input->save()) {
                 $this->refresh();
+            }
         }
         $this->render('adventure', array('tps' => $tps, 'input' => $input));
     }
@@ -35,7 +39,7 @@ class InputController extends ControllerCommon {
                 }
                 $dataProvider = $model->search();
                 break;
-                
+
             case 'kecamatan':
                 $model = new Kecamatan;
                 if ($id) {
@@ -43,7 +47,7 @@ class InputController extends ControllerCommon {
                 }
                 $dataProvider = $model->search();
                 break;
-                
+
             case 'kelurahan':
                 $model = new Kelurahan;
                 if ($id) {
@@ -51,7 +55,7 @@ class InputController extends ControllerCommon {
                 }
                 $dataProvider = $model->search();
                 break;
-                
+
             case 'TPS':
                 $model = new TPS;
                 if ($id) {
