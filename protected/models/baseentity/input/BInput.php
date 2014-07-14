@@ -64,11 +64,11 @@ class BInput extends BaseModel {
             'id' => 'ID',
             'user_id' => 'User',
             'tps_id' => 'TPS',
-            'prabowo_count' => 'Prabowo Count',
-            'jokowi_count' => 'Jokowi Count',
-            'broken_count' => 'Broken Count',
+            'prabowo_count' => 'Suara Prabowo',
+            'jokowi_count' => 'Suara Jokowi',
+            'broken_count' => 'Suara Tidak Sah',
             'timestamp' => 'Timestamp',
-            'check_total_count' => 'Jumlah Total Telah Sama',
+            'check_total_count' => 'Jumlah Total Suara Sah Telah Sama',
             'check_signature' => 'Tanda Tangan Lengkap',
         );
     }
