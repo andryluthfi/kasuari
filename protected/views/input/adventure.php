@@ -45,5 +45,7 @@
             <img src="http://scanc1.kpu.go.id/viewp.php?f=<?= $tps->kelurahan->kelurahan_number ?><?= $tps->tps_number ?>04.jpg" />
         </div>
     </div>
+    
+    <?= $this->renderPartial('_form',array('input'=>$input))?>
 </div>
 
