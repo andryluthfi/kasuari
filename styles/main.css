@@ -1,0 +1,85 @@
+.logo {
+    font-size: larger;
+}
+
+.hidden-button{
+    display: none;
+}
+
+.strong-header {
+    color: #F26E4C;
+    font-weight: lighter;
+    font-size: 20px;
+}
+
+.search-menu-box{
+    border-radius:10px;
+    border: 1px solid #F26E4C;
+}
+
+.search-content{
+    padding:30px;
+    font-size:15pt;
+    color:#8e8787;
+}
+
+.search-header{
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: #f26e4c;
+}
+
+.search-header p {
+    font-family:Helvetica;
+    color:white;
+    font-size:15pt;
+    text-align:center;
+    padding:5px;
+}
+
+.row-custom{
+    display: table-row;
+}
+
+.cell-custom {
+    display: table-cell;
+    word-break: break-all;
+}
+
+input.error{
+    border: 1px dashed #DD4B39 !important;
+    background: #faebe7 !important;
+}
+
+.facility-note{
+    cursor: help;
+}
+
+.about-us{
+    font-size:12pt;
+    font-family:Helvetica;
+    padding:50px 100px;
+    color:#8e8787;
+}
+
+.logo-header.display{
+    opacity: 1.0 !important;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.logo-header.display.hide{
+    opacity: 0.0 !important;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+label > div.tm-radio{
+    padding: 0 3px;
+}
+
+span > label + label{
+    margin-left: 50px;
+}

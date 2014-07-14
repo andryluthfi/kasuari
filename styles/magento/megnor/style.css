@@ -1,0 +1,82 @@
+#advancedmenu {
+    position:relative;        
+	margin:0 auto;
+	text-align:center;
+ 	z-index:9;
+}
+#advancedmenu div.menu{float:none;display:inline-block;}
+.ie7 #advancedmenu div.menu{display:inline;}
+div.menu {
+    float: left;
+}
+div.menu.act {
+   background:none;
+}
+div.menu.active {
+	background:none;
+	color:#5E5E5E ; 
+}
+div.megnor-advanced-menu-popup { 
+  background:#F77E5F;
+	position:absolute;
+	display: none;
+	text-align:left; 
+	
+	top:69px;
+}
+.megnor-advanced-menu-popup_inner{	 background:#FFF;	}
+div.menu a, div.megnor-advanced-menu-popup a {   display:block; }
+div.menu a{border:1px solid #F26E4C;}
+div.megnor-advanced-menu-popup a		
+{ 
+	padding:5px 10px;
+	text-transform:none;
+	
+}
+ div.megnor-advanced-menu-popup a:hover{}
+div.megnor-advanced-menu-popup a.actParent {
+    color: #4D4D4D;
+}
+div.megnor-advanced-menu-popup a.act {
+    color: #A52A2A;
+}
+div.column {
+    float:left;
+    width:180px; /* column width */
+    padding:5px;
+}
+div.itemSubMenu {
+    /*margin-left:20px;*/
+}
+.clearBoth {
+    clear:both;
+}
+
+div.megnor-advanced-menu-popup .block1		{ }
+div.megnor-advanced-menu-popup .block2		{ padding:5px;}
+#advancedmenu .megnor-advanced-menu-popup .itemMenu  a	{ font-weight:normal;  font-size: 15px;margin-bottom:0px;}
+#advancedmenu .level1 > a.itemMenuName {
+    font-size: 17px;
+	font-weight:normal  ; color:#fff ;
+	
+} 
+.itemSubMenu .itemMenu 
+{
+	margin-left:15px;
+}
+#advancedmenu .parentMenu > a{margin-bottom:16px;}
+#advancedmenu .parentMenu > a:hover,#advancedmenu .active .parentMenu > a{border:1px solid #fff;}
+#nav .itemSubMenu .itemMenu a.itemMenuName
+{
+	 background:url("../../../images/nav_arrow.png") no-repeat scroll 96% center transparent;
+    color: #fff; 
+    font-weight: normal;
+    padding: 2px 0 2px 10px; 
+
+}
+.itemSubMenu .itemMenu a:hover	{ background:#E76543;  color: #fff;}
+
+.custom_menu:hover .customblock_inner {    display: block;} 
+.customblock_inner		{ background:#FFF; width:250px; padding:5px;}
+
+ 
