@@ -43,8 +43,6 @@ return array(
             'class' => 'application.extensions.curl.Curl',
             'options' => array(
                 'setOptions' => array(
-                    CURLOPT_FOLLOWLOCATION => true,
-                    CURLOPT_PROXY => '152.118.24.10:8080'
                 ),
             )
         ),
