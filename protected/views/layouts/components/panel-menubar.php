@@ -9,7 +9,7 @@
             <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand navbar-logo" href="<?= $this->createUrl('/site/index') ?>">
-            Kara
+            Kasuari
         </a>
     </div>
     <div class="navbar-collapse collapse navbar-responsive-collapse">

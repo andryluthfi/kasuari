@@ -41,7 +41,8 @@ class SiteController extends ControllerCommon {
      * when an action is not explicitly requested by users.
      */
     public function actionIndex() {
-        $this->render('index', array('user_profile' => array()));
+        $result = Result::model()->find();
+        $this->render('index', array('result' => $result));
     }
 
     /**
