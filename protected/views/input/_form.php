@@ -46,7 +46,13 @@
         </div>
 
     </div>
-
+    <div class="row-fluid">
+        <div class="span6">
+            <?php echo $form->labelEx($inputNote, 'note'); ?>
+            <?php echo $form->textArea($inputNote, 'note', array('size' => 200, 'maxlength' => 200)); ?>
+            <?php echo $form->error($inputNote, 'note'); ?>
+        </div>
+    </div>
     <div class="row-fluid">
         <div class="offset3">
 

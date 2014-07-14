@@ -46,6 +46,6 @@
         </div>
     </div>
     
-    <?= $this->renderPartial('_form',array('input'=>$input))?>
+    <?= $this->renderPartial('_form',array('input'=>$input,'inputNote'=>$inputNote))?>
 </div>
 
