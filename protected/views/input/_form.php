@@ -10,16 +10,21 @@
     <p class="note">Fields with <span class="required">*</span> are required.</p>
 
     <?php echo $form->errorSummary($input); ?>
-
+    <div id="suara">
+        Total Suara: 
+        <div id="total_suara">
+            0
+        </div>
+    </div>
     <div class="row-fluid">
         <div class="span6">
             <?php echo $form->labelEx($input, 'prabowo_count'); ?>
-            <?php echo $form->textField($input, 'prabowo_count', array('size' => 10, 'maxlength' => 10, 'onkeypress' => 'return isNumberKey(event)')); ?>
+            <?php echo $form->textField($input, 'prabowo_count', array('size' => 10, 'maxlength' => 10, 'onkeypress' => 'return isNumberKey(event)', 'OnKeyUp'=> 'changeTotalVote()')); ?>
             <?php echo $form->error($input, 'prabowo_count'); ?>
         </div>
         <div class="span6">
             <?php echo $form->labelEx($input, 'jokowi_count'); ?>
-            <?php echo $form->textField($input, 'jokowi_count', array('size' => 10, 'maxlength' => 10, 'onkeypress' => 'return isNumberKey(event)')); ?>
+            <?php echo $form->textField($input, 'jokowi_count', array('size' => 10, 'maxlength' => 10, 'onkeypress' => 'return isNumberKey(event)', 'OnKeyUp'=> 'changeTotalVote()')); ?>
             <?php echo $form->error($input, 'jokowi_count'); ?>
         </div>
     </div>
@@ -27,7 +32,7 @@
     <div class="row-fluid">
         <div class="span6">
             <?php echo $form->labelEx($input, 'broken_count'); ?>
-            <?php echo $form->textField($input, 'broken_count', array('size' => 10, 'maxlength' => 10, 'onkeypress' => 'return isNumberKey(event)')); ?>
+            <?php echo $form->textField($input, 'broken_count', array('size' => 10, 'maxlength' => 10, 'onkeypress' => 'return isNumberKey(event)', 'OnKeyUp'=> 'changeTotalVote()')); ?>
             <?php echo $form->error($input, 'broken_count'); ?>
         </div>
 
@@ -72,5 +77,14 @@
             return false;
 
         return true;
+    }
+
+    function changeTotalVote() {
+        var valuePrabs = parseInt(document.getElementById('Input_prabowo_count').value);
+        var valueJoks = parseInt(document.getElementById('Input_jokowi_count').value);
+        var valueTidakSah = parseInt(document.getElementById('Input_broken_count').value);
+        
+        document.getElementById('total_suara').innerHTML = valueJoks+valuePrabs+valueTidakSah;
+
     }
 </script>

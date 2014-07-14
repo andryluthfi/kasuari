@@ -10,6 +10,9 @@ class InputController extends ControllerCommon {
     public function actionAdventure() {
         $tps = $this->prioritizeTPS();
         $input = new Input;
+        $input->prabowo_count = 0;
+        $input->jokowi_count = 0;
+        $input->broken_count = 0;
         $inputNote = new InputNote;
         //$inputNote->note = "asdasd";
         if (isset($_POST['Input'])) {
