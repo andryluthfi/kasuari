@@ -11,7 +11,7 @@ class ControllerCommon extends CController {
      * '//layouts/column1', meaning using a single column layout. See 
      * 'protected/views/layouts/column1.php'.
      */
-    public $layout = '//layouts/parent-raw';
+    public $layout = '//layouts/sub-parent/parent-primary';
 
     /**
      * @var string URI or path to header of page on parent.

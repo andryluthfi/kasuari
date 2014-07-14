@@ -1,6 +1,8 @@
 <?php
 
-class SiteController extends Controller {
+class SiteController extends ControllerCommon {
+
+   
 
     /**
      * Declares class-based actions.
@@ -41,24 +43,15 @@ class SiteController extends Controller {
      * when an action is not explicitly requested by users.
      */
     public function actionIndex() {
-//        require_once Yii::getPathOfAlias('ext') . "/hoauth/hybridauth/Hybrid/Auth.php";
-//        $config = array(
-//            "base_url" => "http://mywebsite.com/path/to/hybridauth/",
-//            "providers" => array(
-//                "Facebook" => array(
-//                    "enabled" => true,
-//                    "keys" => array("id" => "1455810054688353", "secret" => "3cddb47400d5381c5a8c68633ecc12d9"),
-//                    "scope" => "email, user_about_me, user_birthday, user_hometown", // optional
-//                    "display" => "popup" // optional
-//        )));
-//
-//
-//        $hybridauth = new Hybrid_Auth($config);
-//
-//        $adapter = $hybridauth->authenticate("Facebook");
-//
-//        $user_profile = $adapter->getUserProfile();
         $this->render('index', array('user_profile' => array()));
+    }
+    
+    /**
+     * This is the default 'index' action that is invoked
+     * when an action is not explicitly requested by users.
+     */
+    public function actionInput() {
+        $this->render('index');
     }
 
     /**

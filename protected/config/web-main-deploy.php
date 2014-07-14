@@ -1,10 +1,10 @@
 <?php
 $basicConfiguration = include 'web-basic.php';
 $basicConfiguration['components']['db'] = array(
-    'connectionString' => 'mysql:host=localhost;dbname=e-archive', // ;unix_socket:/var/lib/mysqld/mysqld.sock
+    'connectionString' => 'mysql:host=localhost;dbname=captcha_kara', // ;unix_socket:/var/lib/mysqld/mysqld.sock
     'emulatePrepare' => true,
-    'username' => 'root',
-    'password' => '',
+    'username' => 'captcha',
+    'password' => 'captch4$',
     'charset' => 'utf8',
 );
 return $basicConfiguration;

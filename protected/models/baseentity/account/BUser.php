@@ -30,10 +30,11 @@ class BUser extends BaseModel
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('email, fname, lname, gender, birthday, acc_status', 'required'),
+			array('email, fname, lname', 'required'),
 			array('acc_status', 'numerical', 'integerOnly'=>true),
 			array('email', 'length', 'max'=>320),
 			array('fname, lname, gender', 'length', 'max'=>45),
+			array('birthday', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, email, fname, lname, gender, birthday, acc_status', 'safe', 'on'=>'search'),
