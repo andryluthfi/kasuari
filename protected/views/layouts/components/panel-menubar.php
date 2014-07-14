@@ -26,6 +26,10 @@
                     'label' => 'Mulai Bertualang',
                     'url' => array('/input/adventure')
                 ),
+                array(
+                    'label' => 'Berangkas',
+                    'url' => array('/input/inventory')
+                ),
             ),
             'htmlOptions' => array(
                 'class' => 'nav navbar-nav',
