@@ -49,7 +49,7 @@
         </div>
 
         <div class="col-md-2">
-            <?= $this->renderPartial('_form', array('input' => $input)) ?>
+            <?= $this->renderPartial('_form', array('input' => $input, 'inputNote' => $inputNote, 'tps'=>$tps)) ?>
         </div>
     </div>
 

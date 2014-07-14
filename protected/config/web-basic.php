@@ -14,6 +14,7 @@ return array(
     // autoloading model and component classes
     'import' => array(
         'application.models.*',
+        'application.models.view.*',
         'application.models.form.*',
         'application.models.baseentity.*',
         'application.models.baseentity.account.*',
