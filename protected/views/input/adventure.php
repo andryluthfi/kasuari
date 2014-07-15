@@ -44,14 +44,39 @@
                 </small>
             </h4>
         </div>
+
         <div class="col-md-9" style="">
-            <img style='width: 100%; border: 2px solid #b3b3b3' src="http://scanc1.kpu.go.id/viewp.php?f=<?= $tps->kelurahan->kelurahan_number ?><?= $tps->tps_number ?>04.jpg" />
+            <a href ="#" id="image1" >Berkas 1</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href ="#" id="image2" >Berkas 2</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href ="#" id="image3" >Berkas 3</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href ="#" id="image4" >Berkas 4</a>
+            <img id="imageKPU" style='width: 100%; border: 2px solid #b3b3b3' src="http://scanc1.kpu.go.id/viewp.php?f=<?= $tps->kelurahan->kelurahan_number ?><?= $tps->tps_number ?>04.jpg" />
         </div>
 
         <div class="col-md-2">
-            <?= $this->renderPartial('_form', array('input' => $input, 'inputNote' => $inputNote, 'tps'=>$tps)) ?>
+            <?= $this->renderPartial('_form', array('input' => $input, 'inputNote' => $inputNote, 'tps' => $tps)) ?>
         </div>
     </div>
 
 </div>
 
+<script type="text/javascript">
+     $('#image1').on({
+            'click': function(){
+            $('#imageKPU').attr('src', 'http://scanc1.kpu.go.id/viewp.php?f=<?= $tps->kelurahan->kelurahan_number ?><?= $tps->tps_number ?>01.jpg');
+            }
+            });
+     $('#image2').on({
+            'click': function(){
+            $('#imageKPU').attr('src', 'http://scanc1.kpu.go.id/viewp.php?f=<?= $tps->kelurahan->kelurahan_number ?><?= $tps->tps_number ?>02.jpg');
+            }
+            });
+     $('#image3').on({
+            'click': function(){
+            $('#imageKPU').attr('src', 'http://scanc1.kpu.go.id/viewp.php?f=<?= $tps->kelurahan->kelurahan_number ?><?= $tps->tps_number ?>03.jpg');
+            }
+            });
+     $('#image4').on({
+            'click': function(){
+            $('#imageKPU').attr('src', 'http://scanc1.kpu.go.id/viewp.php?f=<?= $tps->kelurahan->kelurahan_number ?><?= $tps->tps_number ?>04.jpg');
+            }
+            });
+
+</script>

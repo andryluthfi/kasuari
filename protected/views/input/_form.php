@@ -12,7 +12,7 @@
     <div class="row-fluid">
         <div class="span6">
             <?php echo $form->labelEx($input, 'prabowo_count'); ?>
-            <?php echo $form->textField($input, 'prabowo_count', array('id' => 'start-focus', 'size' => 10, 'maxlength' => 10, 'class' => 'form-control', 'onkeypress' => 'return isNumberKey(event)', 'OnKeyUp' => 'changeTotalVote()')); ?>
+            <?php echo $form->textField($input, 'prabowo_count', array('id' => 'start-focus', 'size' => 10, 'maxlength' => 10, 'class' => 'form-control', 'onkeypress' => 'return isNumberKey(event)', 'OnKeyUp' => 'changeTotalVote();')); ?>
             <?php echo $form->error($input, 'prabowo_count'); ?>
         </div>
         <div class="span6">
@@ -81,10 +81,11 @@
     }
 
     function changeTotalVote() {
-        var valuePrabs = parseInt(document.getElementById('Input_prabowo_count').value);
+        
+        var valuePrabs = parseInt(document.getElementById('start-focus').value);
         var valueJoks = parseInt(document.getElementById('Input_jokowi_count').value);
         var valueTidakSah = parseInt(document.getElementById('Input_broken_count').value);
-
+        
         document.getElementById('total_suara').innerHTML = valueJoks + valuePrabs + valueTidakSah;
 
     }
