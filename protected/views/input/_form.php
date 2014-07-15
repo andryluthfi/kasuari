@@ -23,9 +23,10 @@
     </div>
     <div id="suara">
         <strong>Jumlah suara sah:</strong> 
-        <div id="total_suara" class='text-info' style="padding-left: 13px;">
+        <input type="text" name="total_suara" class='text-info' style="padding-left: 13px;" value="0" >
+        <!--<div id="total_suara" class='text-info' style="padding-left: 13px;">
             0
-        </div>
+        </div>-->
     </div>
     <div class="row-fluid">
         <div class="span6">
@@ -86,7 +87,7 @@
         var valueJoks = parseInt(document.getElementById('Input_jokowi_count').value);
         var valueTidakSah = parseInt(document.getElementById('Input_broken_count').value);
         
-        document.getElementById('total_suara').innerHTML = valueJoks + valuePrabs + valueTidakSah;
+        document.getElementById('total_suara').value= valueJoks + valuePrabs + valueTidakSah;
 
     }
 </script>

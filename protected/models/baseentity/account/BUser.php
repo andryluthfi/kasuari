@@ -10,6 +10,7 @@
  * @property string $lname
  * @property string $gender
  * @property string $birthday
+ * @property string $password
  * @property integer $acc_status
  */
 class BUser extends BaseModel
@@ -30,14 +31,16 @@ class BUser extends BaseModel
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('email, fname, lname', 'required'),
+			array('email, fname, lname, password', 'required'),
 			array('acc_status', 'numerical', 'integerOnly'=>true),
 			array('email', 'length', 'max'=>320),
+                        array('email','unique'),
+                        array('email','email'),
 			array('fname, lname, gender', 'length', 'max'=>45),
 			array('birthday', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, email, fname, lname, gender, birthday, acc_status', 'safe', 'on'=>'search'),
+			array('id, email, fname, lname, gender, birthday, acc_status, password', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,6 +62,7 @@ class BUser extends BaseModel
 	{
 		return array(
 			'id' => 'ID',
+			'password' => 'Password',
 			'email' => 'Email',
 			'fname' => 'Fname',
 			'lname' => 'Lname',
@@ -93,6 +97,7 @@ class BUser extends BaseModel
 		$criteria->compare('gender',$this->gender,true);
 		$criteria->compare('birthday',$this->birthday,true);
 		$criteria->compare('acc_status',$this->acc_status);
+		$criteria->compare('password',$this->password);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
