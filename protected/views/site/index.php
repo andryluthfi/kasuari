@@ -38,7 +38,7 @@
         <div class='row text-left padded-vertical-most'>
             <div class='col-md-6'>
                 <p>
-                    Sistem ini mendukung data entry terhadap hasil scan formulir C1 Pilpres 2014 dari KPU secara keroyokan (atau bahasa kerennya, crowdsourcing), dan dirancang berdasarkan prinsip accountability, verifiability, dan… fun :-)
+                    Sistem ini mendukung <i>data entry</i> terhadap hasil scan formulir C1 Pilpres 2014 dari KPU secara <i>keroyokan</i> (atau bahasa kerennya, <i>crowdsourcing</i>), dan dirancang berdasarkan prinsip <i>accountability</i>, <i>verifiability</i>, dan… <i><strong>fun</strong></i> :-)
                     Harapannya, dengan menyelesaikan pekerjaan ini, kita dapat menghasilkan suatu basis data yang dapat dimanfaatkan oleh masyarakat maupun KPU untuk melakukan verifikasi dan validasi terhadap hasil perhitungan resmi yang mereka lakukan.
                     Kami butuh bantuan anda! Berapapun waktu yang dapat anda sisihkan: 5 menit, setengah jam, atau seharian penuh, bantuan anda sangat berarti untuk mengawal penghitungan suara KPU supaya kita semua mendapatkan hasil Pilpres 2014 yang absah! Mari registrasi atau sign-in dengan Facebook dan mulai membantu mengerjakan data entry.
                     Mohon juga bisa men-share informasi mengenai sistem ini ke sahabat-sahabat anda!

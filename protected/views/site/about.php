@@ -10,9 +10,9 @@
     </h1>
     <div class='row text-left padded-vertical-most'>
         <p>
-            Sistem ini dirancang untuk melakukan data entry terhadap hasil scan 
-            formulir C1 Pilpres 2014 yang disediakan oleh KPU secara keroyokan 
-            (atau bahasa kerennya, crowdsourcing). Harapannya, dengan 
+            Sistem ini dirancang untuk melakukan <i>data entry</i> terhadap hasil scan 
+            formulir C1 Pilpres 2014 yang disediakan oleh KPU secara <i>keroyokan</i> 
+            (atau bahasa kerennya, <i>crowdsourcing</i>). Harapannya, dengan 
             menyelesaikan pekerjaan ini, kita dapat menghasilkan suatu basis 
             data yang dapat dimanfaatkan oleh masyarakat maupun KPU untuk 
             melakukan verifikasi dan validasi terhadap hasil perhitungan resmi 
@@ -49,15 +49,18 @@
             dirancang dan diimplementasikan oleh orang-orang yang belum 
             pernah bertemu sebelumnya, dan dimanfaatkan oleh komunitas yang 
             berhasil mengerjakan data untuk >10.000 TPS yang merepresentasikan 
-            hampir 3 juta suara pemilih. Semua hasil pekerjaan itu dimanfaatkan 
-            pada sistem ini, dan semua user yang sempat terdaftar pada sistem 
-            tersebut bisa langsung login ke sistem ini dan melanjutkan proses 
-            entry data.
+            hampir 3 juta suara pemilih. 
+            <strong>
+                Semua hasil pekerjaan itu dimanfaatkan 
+                pada sistem ini, dan semua user yang sempat terdaftar pada sistem 
+                tersebut bisa langsung login ke sistem ini dan melanjutkan proses 
+                entry data.
+            </strong>
         </p>
         <p>
-            Prinsip-prinsip dasar rancangan sistem ini adalah accountability, 
-            verifiability, dan… fun :-) Bagaimana sistem ini menerapkan 
-            verifiability? Intinya adalah dengan memastikan bahwa pada akhirnya, 
+            Prinsip-prinsip dasar rancangan sistem ini adalah <i>accountability</i>, 
+            <i>verifiability</i>, dan… fun :-) Bagaimana sistem ini menerapkan 
+            <i>verifiability</i>? Intinya adalah dengan memastikan bahwa pada akhirnya, 
             setiap form C1 akan di-entry datanya oleh lebih dari satu user, 
             dan data tersebut baru dianggap sah kalau ternyata user-user 
             tersebut memasukkan data yang sama. Kalau tertarik untuk membaca 
