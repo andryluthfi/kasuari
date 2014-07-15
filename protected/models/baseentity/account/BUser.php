@@ -15,14 +15,15 @@
  */
 class BUser extends BaseModel
 {
-	/**
+	
+        /**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
 		return 'user';
 	}
-
+        
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -52,6 +53,7 @@ class BUser extends BaseModel
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'username' => array(self::HAS_ONE, 'User', 'user_id'),
 		);
 	}
 

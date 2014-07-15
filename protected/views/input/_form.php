@@ -22,11 +22,8 @@
         </div>
     </div>
     <div id="suara">
-        <strong>Jumlah suara sah:</strong> 
-        <input type="text" name="total_suara" class='text-info' style="padding-left: 13px;" value="0" >
-        <!--<div id="total_suara" class='text-info' style="padding-left: 13px;">
-            0
-        </div>-->
+        <label for='broken-count'>Jumlah suara sah:</label> 
+        <input type="text" name='broken-count' id="total_suara" class='text-info form-control' style="padding-left: 13px;" value="0" readonly>
     </div>
     <div class="row-fluid">
         <div class="span6">
@@ -82,12 +79,12 @@
     }
 
     function changeTotalVote() {
-        
+
         var valuePrabs = parseInt(document.getElementById('start-focus').value);
         var valueJoks = parseInt(document.getElementById('Input_jokowi_count').value);
         var valueTidakSah = parseInt(document.getElementById('Input_broken_count').value);
-        
-        document.getElementById('total_suara').value= valueJoks + valuePrabs;
+
+        document.getElementById('total_suara').value = valueJoks + valuePrabs + valueTidakSah;
 
     }
 </script>

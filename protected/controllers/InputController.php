@@ -150,7 +150,11 @@ class InputController extends ControllerLogin {
      * @return TPS best candidate TPS
      */
     protected function prioritizeTPS() {
-        return TPS::model()->find(array('order' => 'rand()'));
+        $candidateTPS = PostTPS::model()->find(array('condition' => 'jumlah_input = 0', 'order' => 'rand()'));
+        if (!$candidateTPS) {
+            $candidateTPS = PostTPS::model()->find(array('condition' => 'jumlah_input > 0', 'order' => 'rand()'));
+        }
+        return TPS::model()->findByPk($candidateTPS->tps_id);
     }
 
     /**
