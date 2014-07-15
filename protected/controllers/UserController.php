@@ -13,8 +13,6 @@ class UserController extends ControllerCommon {
         if (isset($_POST['User']) && isset($_POST['Username'])) {
             $model->attributes = $_POST['User'];
             $username->attributes = $_POST['Username'];
-            $model->fname = "-";
-            $model->lname = "-";
             if ($model->validate()) {
                 $model->password = $model->hashPassword($model->password);
                 $username->user_id = 0;
