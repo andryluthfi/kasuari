@@ -37,6 +37,29 @@ class SiteController extends ControllerCommon {
     }
 
     /**
+     * list of defined filters mode on this Controller and each classes which
+     * inherit.
+     * @return string[] defined filters on this Controller and Sub-Class
+     */
+    public function filters() {
+        return array("accessControl");
+    }
+
+    /**
+     * make sure the system only can be accessed by user. therefore any 
+     * unauthorized user will be redirected to login page to proceed. 
+     * @return type mixed accessRules for this Controller. 
+     */
+    public function accessRules() {
+        return array(
+            array(
+                'deny',
+                'actions' => array('oauthadmin'),
+            ),
+        );
+    }
+
+    /**
      * This is the default 'index' action that is invoked
      * when an action is not explicitly requested by users.
      */
