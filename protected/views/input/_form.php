@@ -82,9 +82,9 @@
 
         var valuePrabs = parseInt(document.getElementById('start-focus').value);
         var valueJoks = parseInt(document.getElementById('Input_jokowi_count').value);
-        var valueTidakSah = parseInt(document.getElementById('Input_broken_count').value);
+        //var valueTidakSah = parseInt(document.getElementById('Input_broken_count').value);
 
-        document.getElementById('total_suara').value = valueJoks + valuePrabs + valueTidakSah;
+        document.getElementById('total_suara').value = valueJoks + valuePrabs;
 
     }
 </script>
