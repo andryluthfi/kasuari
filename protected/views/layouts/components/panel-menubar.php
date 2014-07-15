@@ -28,9 +28,22 @@
                     'visible'=>  !UserWeb::instance()->isGuest
                 ),
                 array(
-                    'label' => 'Berangkas',
+                    'label' => 'Berankas',
                     'url' => array('/input/inventory'),
                     'visible'=>  !UserWeb::instance()->isGuest
+                ),
+                array(
+                    'label' => 'Verifikasi',
+                    'url' => array('/input/verifyInput'),
+                    'visible'=>  !UserWeb::instance()->isGuest
+                ),
+                array(
+                    'label' => 'Help',
+                    'url' => array('/site/help'),
+                ),
+                array(
+                    'label' => 'Tentang Sistem',
+                    'url' => array('/site/about'),
                 ),
             ),
             'htmlOptions' => array(

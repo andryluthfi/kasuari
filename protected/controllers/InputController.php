@@ -33,34 +33,34 @@ class InputController extends ControllerLogin {
                         $inputNote->save();
                     }
                 }
-                $this->refresh();
+                $this->redirect(array('adventure'));
             }
         }
         $this->render('adventure', array('tps' => $tps, 'input' => $input, 'inputNote' => $inputNote));
     }
 
+    /**
+     * Verify input Page
+     */
     public function actionVerifyInput() {
         $input = $this->loadInputRandom();
         $this->render('verify', array('input' => $input));
     }
-    
-    public function actionVerifiedOk($inputId) {
-        $user_verify = new UserVerify;
-        $user_verify->user_id = 123;//dummy
-        $user_verify->input_id = $inputId;
-        $user_verify->is_ok = 1;
-        if($user_verify->save()) $this->redirect ("verifyInput");
-        else echo "error";
+
+    /**
+     * Action Verify input
+     */
+    public function actionVerified($inputId, $respond) {
+        if (is_numeric($respond) && intval($respond) === 0 || intval($respond) === 1) {
+            $user_verify = new UserVerify;
+            $user_verify->user_id = UserWeb::instance()->user()->id; //dummy
+            $user_verify->input_id = $inputId;
+            $user_verify->is_ok = intval($respond);
+            $user_verify->save();
+        }
+        $this->redirect("verifyInput");
     }
-    
-    public function actionVerifiedNo($inputId) {
-        $user_verify = new UserVerify;
-        $user_verify->user_id = 123;//dummy
-        $user_verify->input_id = $inputId;
-        $user_verify->is_ok = 0;
-        if($user_verify->save())$this->redirect ("verifyInput");
-        else echo "error";
-    }
+
     /**
      * Display result
      */
@@ -147,10 +147,13 @@ class InputController extends ControllerLogin {
     protected function prioritizeTPS() {
         return TPS::model()->find(array('order' => 'rand()'));
     }
-    
+
+    /**
+     * Random function for select Input to be verified
+     * @return TPS selected Input to be verified
+     */
     public function loadInputRandom() {
-        $id = 1;//dummy
-        $model = Input::model()->findByPk($id);
+        $model = Input::model()->find(array('order' => 'rand()'));
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
         return $model;

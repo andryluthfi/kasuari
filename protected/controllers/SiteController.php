@@ -42,7 +42,8 @@ class SiteController extends ControllerCommon {
      */
     public function actionIndex() {
         $result = Result::model()->find();
-        $this->render('index', array('result' => $result));
+        $usersScore = PostUser::model()->findAll(array('limit' => 20, 'order' => 'total_post desc'));
+        $this->render('index', array('result' => $result, 'usersScore' => $usersScore));
     }
 
     /**
@@ -78,6 +79,20 @@ class SiteController extends ControllerCommon {
     public function actionLogout() {
         Yii::app()->user->logout();
         $this->redirect(Yii::app()->homeUrl);
+    }
+
+    /**
+     * Help Page
+     */
+    public function actionHelp() {
+        $this->render('help');
+    }
+
+    /**
+     * About Page
+     */
+    public function actionAbout() {
+        $this->render('about');
     }
 
     /**

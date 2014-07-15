@@ -5,7 +5,7 @@
 
             <br/>
             
-            <a href="<?=$this->createUrl('input/verifiedOk',array('inputId'=>$input->id))?>">
+            <a href="<?=$this->createUrl('input/verified',array('inputId'=>$input->id, 'respond'=>1))?>">
                 <?php echo CHtml::button('Benar', array('submit' => array('input/verifiedOk'), 'class' => 'btn btn-large btn-success')); ?>
             </a>
             
@@ -14,7 +14,9 @@
         <div class="offset3">
             
             <br/>
-            <a href="<?=$this->createUrl('input/verifiedNo',array('inputId'=>$input->id))?>"><?php echo CHtml::button('Salah', array('submit' => array('input/verifiedNo'), 'class' => 'btn btn-large btn-success')); ?></a>
+            <a href="<?=$this->createUrl('input/verified',array('inputId'=>$input->id, 'respond'=>0))?>">
+                <?php echo CHtml::button('Salah', array('submit' => array('input/verifiedNo'), 'class' => 'btn btn-large btn-success')); ?>
+            </a>
         </div>
     </div>
 
