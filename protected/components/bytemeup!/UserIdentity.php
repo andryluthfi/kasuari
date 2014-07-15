@@ -8,16 +8,21 @@
 class UserIdentity extends CUserIdentity {
 
     /**
-     * @var Username $user user model that we will get by email
+     * @var User $user user model that we will get by email
      */
     public $user;
-
+    //public $user_id;
     public function __construct($username, $password = null) {
         // sets username and password values
         parent::__construct($username, $password);
-
-        $this->user = Username::model()->find('LOWER(username)=?', array(strtolower($this->username)));
-
+        $usernameObject = Username::model()->find('LOWER(username)=?', array(strtolower($this->username)));
+        if($usernameObject === null) {
+            $this->errorCode = self::ERROR_USERNAME_INVALID;
+        } else {
+            $this->user = User::model()->findByPk($usernameObject->user_id);
+            
+        }
+        
         if ($this->user === null)
             $this->errorCode = self::ERROR_USERNAME_INVALID;
         
@@ -38,7 +43,7 @@ class UserIdentity extends CUserIdentity {
      */
     public function authenticate() {
         if ($this->errorCode === self::ERROR_UNKNOWN_IDENTITY) {
-            if (!$this->user->user->validatePassword($this->password))
+            if (!$this->user->validatePassword($this->password))
                 $this->errorCode = self::ERROR_PASSWORD_INVALID;
             else {
                 $this->beforeAuthentication();
@@ -49,11 +54,12 @@ class UserIdentity extends CUserIdentity {
     }
 
     public function getId() {
-        return $this->user->user_id;
+        if(!isset($this->user_id)) return $this->user->id;
+        else return $this->user_id;
     }
 
     public function getName() {
-        return $this->user->username;
+        return $this->username;
     }
 
     public function beforeAuthentication() {
