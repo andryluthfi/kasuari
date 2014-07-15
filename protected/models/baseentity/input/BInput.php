@@ -68,8 +68,8 @@ class BInput extends BaseModel {
             'jokowi_count' => 'Jumlah suara Jokowi-JK',
             'broken_count' => 'Suara Tidak Sah',
             'timestamp' => 'Timestamp',
-            'check_total_count' => 'Jumlah Total Suara Tidak Sama',
-            'check_signature' => 'Tanda Tangan Tidak Lengkap',
+            'check_total_count' => 'Jumlah Total Suara TIDAK Sama',
+            'check_signature' => 'Tanda Tangan <strong>Saksi</strong> TIDAK Lengkap',
         );
     }
 

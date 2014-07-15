@@ -40,13 +40,13 @@
             Gunakan checkbox berikut untuk menandakan masalah:  
 
             <div class="span6 text-center">
-                <?php echo $form->labelEx($input, 'check_total_count'); ?>
+                <?php echo $form->labelEx($input, 'check_total_count', array('style' => 'font-weight:normal')); ?>
                 <?php echo $form->checkBox($input, 'check_total_count', array('uncheckValue' => '')); ?>
                 <?php echo $form->error($input, 'check_total_count'); ?>
             </div>
 
             <div class="span6 text-center">
-                <?php echo $form->labelEx($input, 'check_signature'); ?>
+                <?php echo $form->labelEx($input, 'check_signature', array('style' => 'font-weight:normal')); ?>
                 <?php echo $form->checkBox($input, 'check_signature', array('uncheckValue' => '')); ?>
                 <?php echo $form->error($input, 'check_signature'); ?>
             </div>
