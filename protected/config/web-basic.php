@@ -7,7 +7,7 @@ Yii::setPathOfAlias('chartjs', dirname(__FILE__) . '/../extensions/yii-chartjs')
 // CWebApplication properties can be configured here.
 return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
-    'name' => 'Kawal Suara Online',
+    'name' => 'KASUARI: Kawal Suara Rakyat Indonesia',
     // preloading 'log' component
     'preload' => array('log'),
     'sourceLanguage' => 'id',
