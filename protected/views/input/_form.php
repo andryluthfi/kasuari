@@ -89,4 +89,6 @@
         document.getElementById('total_suara').innerHTML = valueJoks + valuePrabs + valueTidakSah;
 
     }
+    
+    
 </script>
