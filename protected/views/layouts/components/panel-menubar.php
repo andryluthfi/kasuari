@@ -58,7 +58,26 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
                     <ul class="dropdown-menu" style="width: 299px;padding: 20px;">
                         <li class="mini-login-wrapper">
+                            <form action="<?= $this->createUrl('/site/login') ?>" method="post">
+                                <div class="form-group">
+                                    <input class="form-control input-sm" type="text" name="LoginForm[username]" placeholder="Username"/>
+                                    <input class="form-control input-sm" type="password" name="LoginForm[password]" placeholder="Password"/>
+                                </div>
+                                <div class="form-group text-center">
+                                    <button type="submit" class="btn btn-default btn-sm">Login</button>
+                                </div>
+                            </form>
+                        </li>
+                        <li class="mini-login-wrapper">
                             <?php $this->widget('ext.hoauth.widgets.HOAuth'); ?>
+                        </li>
+                        <li class="mini-login-wrapper">
+                            <h5>
+                                atau ingin daftar dulu?
+                                <a href='<?= $this->createUrl('/user/register') ?>'>
+                                    Daftar Sini
+                                </a>
+                            </h5>
                         </li>
                     </ul>
                 <?php else: ?>
