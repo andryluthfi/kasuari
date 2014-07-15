@@ -8,7 +8,7 @@
 class UserIdentity extends CUserIdentity {
 
     /**
-     * @var User $user user model that we will get by email
+     * @var Username $user user model that we will get by email
      */
     public $user;
 
@@ -16,10 +16,11 @@ class UserIdentity extends CUserIdentity {
         // sets username and password values
         parent::__construct($username, $password);
 
-        $this->user = User::model()->find('LOWER(email)=?', array(strtolower($this->username)));
+        $this->user = Username::model()->find('LOWER(username)=?', array(strtolower($this->username)));
 
         if ($this->user === null)
             $this->errorCode = self::ERROR_USERNAME_INVALID;
+        
         elseif ($password === null) {
             /**
              * you can set here states for user logged in with oauth if you need
@@ -37,7 +38,7 @@ class UserIdentity extends CUserIdentity {
      */
     public function authenticate() {
         if ($this->errorCode === self::ERROR_UNKNOWN_IDENTITY) {
-            if (!$this->user->validatePassword($this->password))
+            if (!$this->user->user->validatePassword($this->password))
                 $this->errorCode = self::ERROR_PASSWORD_INVALID;
             else {
                 $this->beforeAuthentication();
@@ -48,11 +49,11 @@ class UserIdentity extends CUserIdentity {
     }
 
     public function getId() {
-        return $this->user->id;
+        return $this->user->user_id;
     }
 
     public function getName() {
-        return $this->user->email;
+        return $this->user->username;
     }
 
     public function beforeAuthentication() {

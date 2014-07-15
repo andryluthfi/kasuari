@@ -56,5 +56,15 @@ class User extends BUser {
     public function findByEmail($email) {
         return self::model()->findByAttributes(array('email' => $email));
     }
-
+    
+    public function hashPassword($password) {
+        return md5($password);
+    }
+    
+    public function validatePassword($password) {
+        //return crypt($password, $this->password) == $this->password;
+        //return $password === $this->password;
+        return $this->hashPassword($password) === $this->password;
+    }
+    
 }

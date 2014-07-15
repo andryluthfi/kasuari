@@ -8,9 +8,7 @@
     <div class="row text-center">
         <h1 style='line-height: 0.6'>
             KASUARI: Kawal Suara Rakyat Indonesia<br/>
-            <small>
-                oleh Lab. Riset IR - Fasilkom UI
-            </small>
+            <br/>
         </h1>
         <div class="progress">
             <div class="progress-bar progress-bar-success" style="width: <?= $result->percentage_prabowo * 100 ?>%">
@@ -22,13 +20,13 @@
         </div>
         <div class="row">
             <div class='col-md-6'>
-                perolehan suara untuk Prabowo
+                Perolehan suara untuk Prabowo-Hatta
                 <?= $result->percentage_prabowo * 100 ?>%<br/>
                 (<?= number_format($result->count_prabowo) ?>)
 
             </div>
             <div class='col-md-6'>
-                perolehan suara untuk Jokowi
+                Perolehan suara untuk Jokowi-JK
                 <?= $result->percentage_jokowi * 100 ?>%<br/>
                 (<?= number_format($result->count_jokowi) ?>)
             </div>
@@ -46,7 +44,7 @@
             </div>
             <div class='col-md-6'>
                 <h3>
-                    Daftar 10 Pejuang Paling Tangguh
+                    Daftar 10 Kontributor Terbanyak
                 </h3>
                 <table class='table table-bordered table-condensed table-hover table-responsive'>
                     <thead>
