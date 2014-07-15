@@ -11,22 +11,22 @@
 
             <?= $tps->kelurahan->kecamatan->kota->propinsi->propinsi_name ?>
             <small>
-                (<?= $tps->kelurahan->kecamatan->kota->propinsi->propinsi_number ?>)
+                (Propinsi)
             </small>
             -
             <?= $tps->kelurahan->kecamatan->kota->kota_name ?> 
             <small>
-                (<?= $tps->kelurahan->kecamatan->kota->kota_number ?>)
+                (Kota/Kabupaten)
             </small>
             -
             <?= $tps->kelurahan->kecamatan->kecamatan_name ?> 
             <small>
-                (<?= $tps->kelurahan->kecamatan->kecamatan_number ?>)
+                (Kecamatan)
             </small>
             - 
             <?= $tps->kelurahan->kelurahan_name ?> 
             <small>
-                (<?= $tps->kelurahan->kelurahan_number ?>)
+                (Kelurahan/Desa)
             </small>
         </small>
     </h2>

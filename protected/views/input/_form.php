@@ -12,7 +12,7 @@
     <div class="row-fluid">
         <div class="span6">
             <?php echo $form->labelEx($input, 'prabowo_count'); ?>
-            <?php echo $form->textField($input, 'prabowo_count', array('size' => 10, 'maxlength' => 10, 'class' => 'form-control', 'onkeypress' => 'return isNumberKey(event)', 'OnKeyUp' => 'changeTotalVote()')); ?>
+            <?php echo $form->textField($input, 'prabowo_count', array('id' => 'start-focus', 'size' => 10, 'maxlength' => 10, 'class' => 'form-control', 'onkeypress' => 'return isNumberKey(event)', 'OnKeyUp' => 'changeTotalVote()')); ?>
             <?php echo $form->error($input, 'prabowo_count'); ?>
         </div>
         <div class="span6">
@@ -70,6 +70,7 @@
 
 </div><!-- form -->
 <script type="text/javascript">
+    $("#start-focus").focus();
     function isNumberKey(evt)
     {
         var charCode = (evt.which) ? evt.which : event.keyCode

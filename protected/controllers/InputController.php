@@ -132,6 +132,10 @@ class InputController extends ControllerLogin {
                 $dataProvider = new CActiveDataProvider('PostTPS', array('criteria' => array('condition' => 'kelurahan_id = :kelurahan_id', 'params' => array(':kelurahan_id' => $id)), 'pagination' => false));
                 break;
 
+            case 'TPS-view':
+                $tps = TPS::model()->findByPk($id);
+                $this->redirect(sprintf('http://scanc1.kpu.go.id/viewp.php?f=%s%s04.jpg', $tps->kelurahan->kelurahan_number, $tps->tps_number));
+                break;
 
             default:
                 $model = new PostProvinsi('search');
