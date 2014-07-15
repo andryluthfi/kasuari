@@ -11,18 +11,21 @@ class UserIdentity extends CUserIdentity {
      * @var User $user user model that we will get by email
      */
     public $user;
+
     //public $user_id;
     public function __construct($username, $password = null) {
         // sets username and password values
         parent::__construct($username, $password);
         $usernameObject = Username::model()->find('LOWER(username)=?', array(strtolower($this->username)));
-        if($usernameObject === null) {
-            $this->errorCode = self::ERROR_USERNAME_INVALID;
+        if ($usernameObject === null) {
+            $this->user = User::model()->find('LOWER(email)=?', array(strtolower($this->username)));
+            if ($this->user === null) {
+                $this->errorCode = self::ERROR_USERNAME_INVALID;
+            }
         } else {
             $this->user = User::model()->findByPk($usernameObject->user_id);
-            
         }
-        
+
         if ($this->user === null)
             $this->errorCode = self::ERROR_USERNAME_INVALID;
         elseif ($password === null) {
@@ -53,8 +56,7 @@ class UserIdentity extends CUserIdentity {
     }
 
     public function getId() {
-       return $this->user->id;
-       
+        return $this->user->id;
     }
 
     public function getName() {
