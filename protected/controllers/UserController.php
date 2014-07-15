@@ -33,6 +33,7 @@ class UserController extends ControllerCommon
                         $model->lname= "-";
 			if($model->validate()) {
                             $model->password = $model->hashPassword($model->password);
+                            $username->user_id = 0;
                             if($username->validate()){
                                 $model->save();
                                 $username->user_id = $model->id;

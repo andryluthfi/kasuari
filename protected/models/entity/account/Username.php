@@ -39,6 +39,7 @@ class Username extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('user_id, username', 'required'),
+                        array('username','unique'),
 			array('user_id', 'numerical', 'integerOnly'=>true),
 			array('username', 'length', 'max'=>100),
 			// The following rule is used by search().
