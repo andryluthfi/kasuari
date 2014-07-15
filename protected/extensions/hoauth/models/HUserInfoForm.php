@@ -147,12 +147,12 @@ class HUserInfoForm extends CFormModel {
 
 		// account confiramtion scenario, when social network 
 		// returned email of existing local account
-		if(!$this->_model->isNewRecord)
-		{
-			$this->addError('email', $this->confirmStr('email'));
-			$this->scenario = 'email_pass';
-			return false;
-		}
+//		if(!$this->_model->isNewRecord)
+//		{
+//			$this->addError('email', $this->confirmStr('email'));
+//			$this->scenario = 'email_pass';
+//			return false;
+//		}
 		return $this->validate();
 	}
 

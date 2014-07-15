@@ -14,7 +14,7 @@
 
 return
         array(
-            "base_url" => "http://localhost:8081/kara/site/oauth",
+            "base_url" => Yii::app()->params['values']['baseURL'],
             "providers" => array(
                 // openid providers
                 "OpenID" => array(
@@ -33,7 +33,10 @@ return
                 ),
                 "Facebook" => array(
                     "enabled" => true,
-                    "keys" => array("id" => "1455810054688353", "secret" => "3cddb47400d5381c5a8c68633ecc12d9")
+                    "keys" => array(
+                        "id" => Yii::app()->params['facebookAPI']['ID'],
+                        "secret" => Yii::app()->params['facebookAPI']['secret']
+                    )
                 ),
                 "Twitter" => array(
                     "enabled" => false,

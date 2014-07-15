@@ -15,11 +15,4 @@ $basicConfiguration['params']['facebookAPI'] = array(
     'secret' => 'c47d1b513ed377e547cfd610270149ba'
 );
 
-//For email configuration
-//$basicConfiguration['components']['request'] = array(
-//    'hostInfo' => 'http://www.mss.com',
-//    'baseUrl' => '',
-//    'scriptUrl' => '',
-//);
-
 return $basicConfiguration;
