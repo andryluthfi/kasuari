@@ -3211,3 +3211,80 @@ Stack trace:
 #16 {main}
 REQUEST_URI=/kara/
 ---
+2014/07/16 00:01:24 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "D:\Program Files\XAMPP\htdocs\kasuari\assets" tidak valid. Pastikan direktori tersebut sudah ada dan dapat ditulis oleh proses server Web.' in D:\Program Files\XAMPP\yii\framework\web\CAssetManager.php:138
+Stack trace:
+#0 D:\Program Files\XAMPP\yii\framework\web\CAssetManager.php(123): CAssetManager->setBasePath('D:\Program File...')
+#1 D:\Program Files\XAMPP\yii\framework\web\CAssetManager.php(217): CAssetManager->getBasePath()
+#2 D:\Program Files\XAMPP\htdocs\kasuari\protected\extensions\hoauth\widgets\HOAuth.php(46): CAssetManager->publish('D:\Program File...', false, -1, true)
+#3 D:\Program Files\XAMPP\htdocs\kasuari\protected\extensions\hoauth\widgets\HOAuth.php(31): HOAuth->registerFiles()
+#4 D:\Program Files\XAMPP\yii\framework\web\CBaseController.php(147): HOAuth->init()
+#5 D:\Program Files\XAMPP\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.hoauth.widg...', Array)
+#6 D:\Program Files\XAMPP\htdocs\kasuari\protected\views\layouts\components\panel-menubar.php(72): CBaseController->widget('ext.hoauth.widg...')
+#7 D:\Program Files\XAMPP\yii\framework\web\CBaseController.php(126): require('D:\Program File...')
+#8 D:\Program Files\XAMPP\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\Program File...', NULL, true)
+#9 D:\Program Files\XAMPP\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\Program File...', NULL, true)
+#10 D:\Program Files\XAMPP\htdocs\kasuari\protected\views\layouts\parent-raw.php(19): CController->renderPartial('//layouts/compo...')
+#11 D:\Program Files\XAMPP\yii\framework\web\CBaseController.php(126): require('D:\Program File...')
+#12 D:\Program Files\XAMPP\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\Program File...', Array, true)
+#13 D:\Program Files\XAMPP\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('D:\Program File...', Array, true)
+#14 D:\Program Files\XAMPP\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('???<div class="...')
+#15 D:\Program Files\XAMPP\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('???<div class="...')
+#16 D:\Program Files\XAMPP\yii\framework\web\CBaseController.php(206): COutputProcessor->run()
+#17 D:\Program Files\XAMPP\yii\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#18 D:\Program Files\XAMPP\htdocs\kasuari\protected\views\layouts\sub-parent\parent-primary.php(6): CBaseController->endContent()
+#19 D:\Program Files\XAMPP\yii\framework\web\CBaseController.php(126): require('D:\Program File...')
+#20 D:\Program Files\XAMPP\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\Program File...', Array, true)
+#21 D:\Program Files\XAMPP\yii\framework\web\CController.php(784): CBaseController->renderFile('D:\Program File...', Array, true)
+#22 D:\Program Files\XAMPP\htdocs\kasuari\protected\controllers\SiteController.php(69): CController->render('index', Array)
+#23 D:\Program Files\XAMPP\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#24 D:\Program Files\XAMPP\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#25 D:\Program Files\XAMPP\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#26 D:\Program Files\XAMPP\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#27 D:\Program Files\XAMPP\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#28 D:\Program Files\XAMPP\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#29 D:\Program Files\XAMPP\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#30 D:\Program Files\XAMPP\yii\framework\web\CController.php(291): CFilterChain->run()
+#31 D:\Program Files\XAMPP\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#32 D:\Program Files\XAMPP\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#33 D:\Program Files\XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#34 D:\Program Files\XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#35 D:\Program Files\XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#36 {main}
+REQUEST_URI=/kasuari/
+---
+2014/07/16 00:01:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/IczWvq5y_Cwwv_rBjOtT0w.woff"' in D:\Program Files\XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Program Files\XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/IczWvq5y_...')
+#1 D:\Program Files\XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Program Files\XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/IczWvq5y_Cwwv_rBjOtT0w.woff
+HTTP_REFERER=http://localhost:8081/kasuari/
+---
+2014/07/16 00:01:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff"' in D:\Program Files\XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Program Files\XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/JbtMzqLaY...')
+#1 D:\Program Files\XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Program Files\XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff
+HTTP_REFERER=http://localhost:8081/kasuari/
+---
+2014/07/16 00:01:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff"' in D:\Program Files\XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Program Files\XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/JbtMzqLaY...')
+#1 D:\Program Files\XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Program Files\XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff
+HTTP_REFERER=http://localhost:8081/kasuari/
+---
+2014/07/16 00:01:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/IczWvq5y_Cwwv_rBjOtT0w.woff"' in D:\Program Files\XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Program Files\XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/IczWvq5y_...')
+#1 D:\Program Files\XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Program Files\XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/IczWvq5y_Cwwv_rBjOtT0w.woff
+HTTP_REFERER=http://localhost:8081/kasuari/
+---
