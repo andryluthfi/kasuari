@@ -56,9 +56,7 @@ class PostKota extends BaseModel {
      */
     public function attributeLabels() {
         return array(
-            'kota_id' => 'Kota',
             'kota_name' => 'Kota Name',
-            'kota_number' => 'Kota Number',
             'propinsi_id' => 'Propinsi',
             'jumlah_input' => 'Jumlah Input',
             'jumlah_tps' => 'Jumlah Tps',

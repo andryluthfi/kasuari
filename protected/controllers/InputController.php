@@ -5,7 +5,7 @@
  *
  * @author Andry Luthfi
  */
-class InputController extends ControllerCommon {
+class InputController extends ControllerLogin {
 
     /**
      * Give a random Challenge to User

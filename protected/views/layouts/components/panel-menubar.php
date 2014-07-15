@@ -24,11 +24,13 @@
                 ),
                 array(
                     'label' => 'Mulai Bertualang',
-                    'url' => array('/input/adventure')
+                    'url' => array('/input/adventure'),
+                    'visible'=>  !UserWeb::instance()->isGuest
                 ),
                 array(
                     'label' => 'Berangkas',
-                    'url' => array('/input/inventory')
+                    'url' => array('/input/inventory'),
+                    'visible'=>  !UserWeb::instance()->isGuest
                 ),
             ),
             'htmlOptions' => array(

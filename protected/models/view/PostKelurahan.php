@@ -56,10 +56,7 @@ class PostKelurahan extends BaseModel {
      */
     public function attributeLabels() {
         return array(
-            'kelurahan_id' => 'Kelurahan',
             'kelurahan_name' => 'Kelurahan Name',
-            'kelurahan_number' => 'Kelurahan Number',
-            'kecamatan_id' => 'Kecamatan',
             'jumlah_input' => 'Jumlah Input',
             'jumlah_tps' => 'Jumlah Tps',
             'count_jokowi' => 'Count Jokowi',

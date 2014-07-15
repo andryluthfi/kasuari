@@ -132,7 +132,6 @@ abstract class BaseFacebook {
      * Default options for curl.
      */
     public static $CURL_OPTS = array(
-//        CURLOPT_PROXY => '152.118.24.10:8080',
         CURLOPT_CONNECTTIMEOUT => 50,
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_TIMEOUT => 60,
@@ -915,6 +914,11 @@ abstract class BaseFacebook {
         }
 
         $opts = self::$CURL_OPTS;
+
+        if (isset(Yii::app()->params['values']['proxy'])) {
+            $data = Yii::app()->params['values']['proxy'];
+            $opts[key($data)] = $data[key($data)];
+        }
         if ($this->getFileUploadSupport()) {
             $opts[CURLOPT_POSTFIELDS] = $params;
         } else {

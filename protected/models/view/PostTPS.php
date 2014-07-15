@@ -54,7 +54,6 @@ class PostTPS extends BaseModel {
      */
     public function attributeLabels() {
         return array(
-            'tps_id' => 'Tps',
             'tps_number' => 'Tps Number',
             'kelurahan_id' => 'Kelurahan',
             'jumlah_input' => 'Jumlah Input',

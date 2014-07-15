@@ -56,10 +56,7 @@ class PostKecamatan extends BaseModel {
      */
     public function attributeLabels() {
         return array(
-            'kecamatan_id' => 'Kecamatan',
             'kecamatan_name' => 'Kecamatan Name',
-            'kecamatan_number' => 'Kecamatan Number',
-            'kota_id' => 'Kota',
             'jumlah_input' => 'Jumlah Input',
             'jumlah_tps' => 'Jumlah Tps',
             'count_jokowi' => 'Count Jokowi',
