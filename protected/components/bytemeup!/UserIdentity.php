@@ -53,8 +53,8 @@ class UserIdentity extends CUserIdentity {
     }
 
     public function getId() {
-        if(!isset($this->user_id)) return $this->user->id;
-        else return $this->user_id;
+       return $this->user->id;
+       
     }
 
     public function getName() {
