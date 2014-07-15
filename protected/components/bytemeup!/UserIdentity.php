@@ -25,7 +25,6 @@ class UserIdentity extends CUserIdentity {
         
         if ($this->user === null)
             $this->errorCode = self::ERROR_USERNAME_INVALID;
-        
         elseif ($password === null) {
             /**
              * you can set here states for user logged in with oauth if you need
@@ -59,7 +58,7 @@ class UserIdentity extends CUserIdentity {
     }
 
     public function getName() {
-        return $this->username;
+        return $this->user->email;
     }
 
     public function beforeAuthentication() {

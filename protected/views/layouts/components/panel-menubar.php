@@ -28,7 +28,7 @@
                     'visible' => !UserWeb::instance()->isGuest
                 ),
                 array(
-                    'label' => 'Berankas',
+                    'label' => 'Brankas',
                     'url' => array('/input/inventory'),
                     'visible' => !UserWeb::instance()->isGuest
                 ),

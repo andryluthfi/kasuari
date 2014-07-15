@@ -44,7 +44,7 @@
             </div>
             <div class='col-md-6'>
                 <h3>
-                    Daftar 10 Kontributor Terbanyak
+                    Daftar <?= count($usersScore) ?> Kontributor Terbanyak
                 </h3>
                 <table class='table table-bordered table-condensed table-hover table-responsive'>
                     <thead>
