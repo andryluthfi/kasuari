@@ -84,6 +84,14 @@
         var valueJoks = parseInt(document.getElementById('Input_jokowi_count').value);
         //var valueTidakSah = parseInt(document.getElementById('Input_broken_count').value);
 
+        if (isNaN(valuePrabs)) {
+            valuePrabs = 0;
+        }
+        
+        if (isNaN(valueJoks)) {
+            valueJoks = 0;
+        }
+
         document.getElementById('total_suara').value = valueJoks + valuePrabs;
 
     }
