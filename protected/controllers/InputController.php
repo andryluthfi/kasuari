@@ -39,6 +39,28 @@ class InputController extends ControllerLogin {
         $this->render('adventure', array('tps' => $tps, 'input' => $input, 'inputNote' => $inputNote));
     }
 
+    public function actionVerifyInput() {
+        $input = $this->loadInputRandom();
+        $this->render('verify', array('input' => $input));
+    }
+    
+    public function actionVerifiedOk($inputId) {
+        $user_verify = new UserVerify;
+        $user_verify->user_id = 123;//dummy
+        $user_verify->input_id = $inputId;
+        $user_verify->is_ok = 1;
+        if($user_verify->save()) $this->redirect ("verifyInput");
+        else echo "error";
+    }
+    
+    public function actionVerifiedNo($inputId) {
+        $user_verify = new UserVerify;
+        $user_verify->user_id = 123;//dummy
+        $user_verify->input_id = $inputId;
+        $user_verify->is_ok = 0;
+        if($user_verify->save())$this->redirect ("verifyInput");
+        else echo "error";
+    }
     /**
      * Display result
      */
@@ -124,6 +146,14 @@ class InputController extends ControllerLogin {
      */
     protected function prioritizeTPS() {
         return TPS::model()->find(array('order' => 'rand()'));
+    }
+    
+    public function loadInputRandom() {
+        $id = 1;//dummy
+        $model = Input::model()->findByPk($id);
+        if ($model === null)
+            throw new CHttpException(404, 'The requested page does not exist.');
+        return $model;
     }
 
 }
