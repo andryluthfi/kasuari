@@ -51,6 +51,7 @@ class InputController extends ControllerLogin {
      * Action Verify input
      */
     public function actionVerified($inputId, $respond) {
+        throw new CHttpException(404, 'Maaf fitur ini sedang dalam masa pengembangan');
         if (is_numeric($respond) && intval($respond) === 0 || intval($respond) === 1) {
             $user_verify = new UserVerify;
             $user_verify->user_id = UserWeb::instance()->user()->id; //dummy

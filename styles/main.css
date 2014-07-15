@@ -83,3 +83,7 @@ label > div.tm-radio{
 span > label + label{
     margin-left: 50px;
 }
+
+footer{
+    padding-top: 50px;
+}

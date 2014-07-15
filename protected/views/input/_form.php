@@ -9,12 +9,6 @@
     <?php echo $form->errorSummary($input); ?>
     <?php echo CHtml::hiddenField('tps_id', $tps->tps_id); ?>
 
-    <div id="suara">
-        Total Suara: 
-        <div id="total_suara">
-            0
-        </div>
-    </div>
     <div class="row-fluid">
         <div class="span6">
             <?php echo $form->labelEx($input, 'prabowo_count'); ?>
@@ -27,7 +21,12 @@
             <?php echo $form->error($input, 'jokowi_count'); ?>
         </div>
     </div>
-
+    <div id="suara">
+        <strong>Jumlah suara sah:</strong> 
+        <div id="total_suara" class='text-info' style="padding-left: 13px;">
+            0
+        </div>
+    </div>
     <div class="row-fluid">
         <div class="span6">
             <?php echo $form->labelEx($input, 'broken_count'); ?>
@@ -36,19 +35,22 @@
         </div>
 
     </div>
-    <div class="row-fluid">
-        <div class="span6">
-            <?php echo $form->labelEx($input, 'check_total_count'); ?>
-            <?php echo $form->checkBox($input, 'check_total_count', array('uncheckValue' => '')); ?>
-            <?php echo $form->error($input, 'check_total_count'); ?>
-        </div>
+    <div class="row-fluid ">
+        <div class='row alert alert-warning' style="margin: 13px 0px">
+            Gunakan checkbox berikut untuk menandakan masalah:  
 
-        <div class="span6">
-            <?php echo $form->labelEx($input, 'check_signature'); ?>
-            <?php echo $form->checkBox($input, 'check_signature', array('uncheckValue' => '')); ?>
-            <?php echo $form->error($input, 'check_signature'); ?>
-        </div>
+            <div class="span6 text-center">
+                <?php echo $form->labelEx($input, 'check_total_count'); ?>
+                <?php echo $form->checkBox($input, 'check_total_count', array('uncheckValue' => '')); ?>
+                <?php echo $form->error($input, 'check_total_count'); ?>
+            </div>
 
+            <div class="span6 text-center">
+                <?php echo $form->labelEx($input, 'check_signature'); ?>
+                <?php echo $form->checkBox($input, 'check_signature', array('uncheckValue' => '')); ?>
+                <?php echo $form->error($input, 'check_signature'); ?>
+            </div>
+        </div>
     </div>
     <div class="row-fluid">
         <div class="form-group">
@@ -59,7 +61,6 @@
     </div>
     <div class="row-fluid">
         <div class="offset3">
-
             <br/>
             <?php echo CHtml::submitButton($input->isNewRecord ? 'Submit' : 'Save', array('class' => 'btn btn-large btn-success')); ?>
         </div>

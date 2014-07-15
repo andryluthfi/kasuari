@@ -9,7 +9,7 @@
             <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand navbar-logo" href="<?= $this->createUrl('/site/index') ?>">
-            Kasuari
+            KASUARI
         </a>
     </div>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
@@ -23,19 +23,19 @@
                     'url' => array('/site/index')
                 ),
                 array(
-                    'label' => 'Mulai Bertualang',
+                    'label' => 'Masukan Data',
                     'url' => array('/input/adventure'),
-                    'visible'=>  !UserWeb::instance()->isGuest
+                    'visible' => !UserWeb::instance()->isGuest
                 ),
                 array(
                     'label' => 'Berankas',
                     'url' => array('/input/inventory'),
-                    'visible'=>  !UserWeb::instance()->isGuest
+                    'visible' => !UserWeb::instance()->isGuest
                 ),
                 array(
                     'label' => 'Verifikasi',
                     'url' => array('/input/verifyInput'),
-                    'visible'=>  !UserWeb::instance()->isGuest
+                    'visible' => false
                 ),
                 array(
                     'label' => 'Help',
@@ -74,7 +74,7 @@
                                 </script>
                             </div>
                             <div class="col-sm-8">
-                                <?= UserWeb::instance()->user()->fname . UserWeb::instance()->user()->lname ?><br/>
+                                <?= UserWeb::instance()->user()->fname . " " . UserWeb::instance()->user()->lname ?><br/>
                                 <small>
                                     sebagai  
                                     <?= get_class(UserWeb::instance()->level()) ?>

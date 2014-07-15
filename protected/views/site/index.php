@@ -7,7 +7,7 @@
 <div class='container'>
     <div class="row text-center">
         <h1 style='line-height: 0.6'>
-            Kawal Suara Online<br/>
+            KASUARI: Kawal Suara Rakyat Indonesia<br/>
             <small>
                 oleh Lab. Riset IR - Fasilkom UI
             </small>
