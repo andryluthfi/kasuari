@@ -8,7 +8,7 @@
 <div class="container center-wrapper">
     <div class="row">
         <br />
-        CATATAN: Jika anda adalah user yang sudah berkontribusi sebelumnya pada sistem http://realcount.herokuapp.com, dan pada sistem realcount tersebut anda melakukan Sign-In dengan Facebook, maka anda cukup melakukan hal yang sama pada sistem Kasuari, dan ia akan mengidentifikasi anda dan me-retrieve profil lama anda, sehingga anda dapat melanjutkan kontribusi data entry yang telah dilakukan pada sistem realcount. Namun, jika pada sistem realcount anda <b>TIDAK</b> melakukan Sign-In dengan Facebook, silahkan melakukan <b>registrasi user baru</b> pada Kasuari dengan menggunakan alamat email yang sama seperti yang digunakan pada sistem realcount, dan sistem Kasuari akan mengidentifikasi anda dan me-retrieve profil lama anda
+        CATATAN: Jika anda adalah user yang sudah berkontribusi sebelumnya pada sistem http://realcount.herokuapp.com, dan pada sistem realcount tersebut anda melakukan Sign-In dengan Facebook, maka anda cukup melakukan hal yang sama pada sistem Kasuari, dan ia akan mengidentifikasi anda dan me-retrieve profil lama anda, sehingga anda dapat melanjutkan kontribusi data entry yang telah dilakukan pada sistem realcount. Namun, jika pada sistem realcount anda <b>TIDAK</b> melakukan Sign-In dengan Facebook, silahkan <b>mengklaim identitas/akun anda</b> pada form ini dengan menggunakan <b>alamat email yang sama</b> seperti yang digunakan pada sistem realcount, dan sistem KASUARI akan mengidentifikasi anda dan me-retrieve profil lama anda. <b>Password tidak harus sama</b>.
         <br/>
         <br/>
         <br/>
