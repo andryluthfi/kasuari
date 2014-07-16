@@ -20,7 +20,6 @@
                             ));
                             ?>
                             <?php echo $form->errorSummary($model); ?>
-                            <?php echo $form->errorSummary($username); ?>
 
                             <div class="row-fluid">
                                 <div class="span6">
@@ -29,28 +28,19 @@
 
                                 </div>
                                 <div class="span6">
-                                    <?php echo $form->labelEx($username, 'username'); ?>
-                                    <?php echo $form->textField($username, 'username', array('size' => 45, 'maxlength' => 100, 'class' => 'form-control')); ?>
-
+                                    <?php echo $form->labelEx($model, 'fname'); ?>
+                                    <?php echo $form->textField($model, 'fname', array('size' => 45, 'maxlength' => 45, 'class' => 'form-control')); ?>
                                 </div>
                             </div>
 
                             <div class="row-fluid">
-                                <div class="span6">
-                                    <?php echo $form->labelEx($model, 'fname'); ?>
-                                    <?php echo $form->textField($model, 'fname', array('size' => 45, 'maxlength' => 45, 'class' => 'form-control')); ?>
-                                </div>
                                 <div class="span6">
                                     <?php echo $form->labelEx($model, 'lname'); ?>
                                     <?php echo $form->textField($model, 'lname', array('size' => 45, 'maxlength' => 45, 'class' => 'form-control')); ?>
                                 </div>
-                            </div>
-                            <div class="row-fluid">
                                 <div class="span6">
                                     <?php echo $form->labelEx($model, 'password'); ?>
                                     <?php echo $form->passwordField($model, 'password', array('size' => 60, 'maxlength' => 255, 'class' => 'form-control')); ?>
-                                </div>
-                                <div class="span6">
                                 </div>
                             </div>
                             <div class="row-fluid">

@@ -8,25 +8,28 @@ class UserController extends ControllerCommon {
      */
     public function actionRegister() {
         $model = new User;
-        $username = new Username;
+        //$username = new Username;
 
-        if (isset($_POST['User']) && isset($_POST['Username'])) {
+        if (isset($_POST['User'])) {
             $model->attributes = $_POST['User'];
-            $username->attributes = $_POST['Username'];
+            //$username->attributes = $_POST['Username'];
             if ($model->validate()) {
                 $model->password = $model->hashPassword($model->password);
-                $username->user_id = 0;
-                if ($username->validate()) {
-                    $model->save();
-                    $username->user_id = $model->id;
-                    $username->save();
+                //$username->user_id = 0;
+                if($model->save()) {
                     $this->redirect(array('site/index'));
                 }
+//                if ($username->validate()) {
+//                    $model->save();
+//                    $username->user_id = $model->id;
+//                    $username->save();
+//                    $this->redirect(array('site/index'));
+//                }
             }
         }
         $model->password = "";
         $this->render('register', array(
-            'model' => $model, 'username' => $username
+            'model' => $model, //'username' => $username
         ));
     }
 

@@ -16,15 +16,16 @@ class UserIdentity extends CUserIdentity {
     public function __construct($username, $password = null) {
         // sets username and password values
         parent::__construct($username, $password);
-        $usernameObject = Username::model()->find('LOWER(username)=?', array(strtolower($this->username)));
-        if ($usernameObject === null) {
-            $this->user = User::model()->find('LOWER(email)=?', array(strtolower($this->username)));
-            if ($this->user === null) {
-                $this->errorCode = self::ERROR_USERNAME_INVALID;
-            }
-        } else {
-            $this->user = User::model()->findByPk($usernameObject->user_id);
+//        $usernameObject = Username::model()->find('LOWER(username)=?', array(strtolower($this->username)));
+//        if ($usernameObject === null) {
+        //$this->user = User::model()->find('LOWER(email)=?', array(strtolower($this->username)));
+        $this->user = User::model()->find('LOWER(email)=?', array(strtolower($this->username)));
+        if ($this->user === null) {
+            $this->errorCode = self::ERROR_USERNAME_INVALID;
         }
+//        } else {
+//            $this->user = User::model()->findByPk($usernameObject->user_id);
+//        }
 
         if ($this->user === null)
             $this->errorCode = self::ERROR_USERNAME_INVALID;
