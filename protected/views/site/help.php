@@ -30,8 +30,8 @@
             untuk Prabowo-Hatta, tekan Tab, masukkan angka untuk Jokowi-JK, 
             tekan Tab lagi, masukkan angka tidak sah, tekan Tab lagi, lalu, 
             jika diperlukan, menekan Spacebar pada saat fokus ada di checkbox,
-            dan selanjutnya pada tombol 'Save'. Anda akan langsung dibawa ke 
-            form C1 berikutnya untuk dikerjakan.
+            dan selanjutnya menekan Spacebar pada tombol 'Submit'. Anda akan 
+            langsung dibawa ke form C1 berikutnya untuk dikerjakan.
         </p>
     </div>
 </div>
