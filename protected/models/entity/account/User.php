@@ -57,6 +57,10 @@ class User extends BUser {
         return self::model()->findByAttributes(array('email' => $email));
     }
     
+    public function findEmailToClaim($email) {
+        return self::model()->findByAttributes(array('email' => $email,'klaim' => 0));
+    }
+    
     public function hashPassword($password) {
         return md5($password);
     }

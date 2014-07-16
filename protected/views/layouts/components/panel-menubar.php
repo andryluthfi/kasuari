@@ -51,13 +51,14 @@
             )
         ));
         ?>
-
+        
         <ul class="nav navbar-nav navbar-right">
             <li class="dropdown <?= strcasecmp($this->id, 'account') === 0 ? 'active' : '' ?>">
                 <?php if (Yii::app()->user->isGuest): ?>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
                     <ul class="dropdown-menu" style="width: 299px;padding: 20px;">
                         <li class="mini-login-wrapper">
+                           
                             <form action="<?= $this->createUrl('/site/login') ?>" method="post">
                                 <div class="form-group">
                                     <input class="form-control input-sm" type="text" name="LoginForm[email]" placeholder="Email"/>
@@ -112,6 +113,7 @@
         </ul>
     </div>
 </div>
+Anda user realcount.heroku.com?klik di <?= CHtml::link('sini',array("user/klaim"))?>
 
 <script>
 

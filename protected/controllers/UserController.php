@@ -16,10 +16,12 @@ class UserController extends ControllerCommon {
 //            $model->password = $model->hashPassword($model->password);
 //            $model->verifyPassword = $model->hashPassword($model->password);
             //echo $model->password . " " . $model->verifyPassword;
+            $model->klaim = 1;
             if ($model->validate()) {
                 $passTemp = $model->password;
                 $model->password = $model->hashPassword($model->password);
                 $model->verifyPassword = $model->hashPassword($model->verifyPassword);
+                
                 //echo $model->password . " " . $model->verifyPassword;
                 //$username->user_id = 0;
                 if ($model->save()) {
@@ -39,6 +41,29 @@ class UserController extends ControllerCommon {
         $model->password = "";
         $model->verifyPassword = "";
         $this->render('register', array(
+            'model' => $model, //'username' => $username
+        ));
+    }
+
+    public function actionKlaim() {
+        $model = new User;
+        if (isset($_POST['User'])) {
+            $model->attributes = $_POST['User'];
+            $modelOld = User::model()->findEmailToClaim($model->email);
+//            echo $modelOld->email;
+            if (isset($modelOld) || $modelOld != "") {
+                $passTemp = $modelOld->password;
+                $modelOld->password = $modelOld->hashPassword($modelOld->password);
+                $modelOld->klaim = 1;
+                if ($modelOld->update()) {
+                    $identity = new UserIdentity($model->email, $passTemp);
+                    $identity->authenticate();
+                    Yii::app()->user->login($identity, 0);
+                    $this->redirect(array('input/adventure'));
+                }
+            }
+        }
+        $this->render('klaim', array(
             'model' => $model, //'username' => $username
         ));
     }

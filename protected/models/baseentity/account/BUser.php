@@ -12,6 +12,7 @@
  * @property string $birthday
  * @property string $password
  * @property integer $acc_status
+ * @property integer $klaim
  */
 class BUser extends BaseModel {
     
@@ -40,7 +41,7 @@ class BUser extends BaseModel {
             array('birthday', 'safe'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, email, fname, lname, gender, birthday, acc_status, password, verifyPassword', 'safe', 'on' => 'search'),
+            array('id, email, fname, lname,klaim, gender, birthday, acc_status, password, verifyPassword', 'safe', 'on' => 'search'),
         );
     }
 
