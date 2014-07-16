@@ -61,6 +61,7 @@
         <div class="offset3">
             <br/>
             <?php echo CHtml::submitButton($input->isNewRecord ? 'Submit' : 'Save', array('class' => 'btn btn-large btn-success')); ?>
+            <?php echo CHtml::htmlButton('Refresh', array('onClick' => 'window.location="'.Yii::app()->getRequest()->getUrl().'"'))?>
         </div>
     </div>
 
