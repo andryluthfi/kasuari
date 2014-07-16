@@ -1,0 +1,247 @@
+2014/07/16 16:25:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff"' in C:\Server XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Server XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/JbtMzqLaY...')
+#1 C:\Server XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Server XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff
+HTTP_REFERER=http://localhost:8081/kasuari/
+---
+2014/07/16 16:25:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/IczWvq5y_Cwwv_rBjOtT0w.woff"' in C:\Server XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Server XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/IczWvq5y_...')
+#1 C:\Server XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Server XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/IczWvq5y_Cwwv_rBjOtT0w.woff
+HTTP_REFERER=http://localhost:8081/kasuari/
+---
+2014/07/16 16:25:09 [error] [exception.CException] exception 'CException' with message 'HOAuthAction dan behaviornya tidak memiliki method ataupun closure bernama "createUrl"' in C:\Server XAMPP\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\Server XAMPP\htdocs\kasuari\protected\extensions\hoauth\HOAuthAction.php(276): CComponent->__call('createUrl', Array)
+#1 C:\Server XAMPP\htdocs\kasuari\protected\extensions\hoauth\HOAuthAction.php(276): HOAuthAction->createUrl('/input/adventur...')
+#2 C:\Server XAMPP\htdocs\kasuari\protected\extensions\hoauth\HOAuthAction.php(149): HOAuthAction->oAuth('Facebook')
+#3 C:\Server XAMPP\yii\framework\web\actions\CAction.php(76): HOAuthAction->run()
+#4 C:\Server XAMPP\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#5 C:\Server XAMPP\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(HOAuthAction))
+#6 C:\Server XAMPP\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\Server XAMPP\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\Server XAMPP\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\Server XAMPP\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\Server XAMPP\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\Server XAMPP\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(HOAuthAction), Array)
+#12 C:\Server XAMPP\yii\framework\web\CWebApplication.php(282): CController->run('oauth')
+#13 C:\Server XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/oauth')
+#14 C:\Server XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Server XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/kasuari/site/oauth?provider=Facebook
+HTTP_REFERER=http://localhost:8081/kasuari/
+---
+2014/07/16 16:25:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/IczWvq5y_Cwwv_rBjOtT0w.woff"' in C:\Server XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Server XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/IczWvq5y_...')
+#1 C:\Server XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Server XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/IczWvq5y_Cwwv_rBjOtT0w.woff
+HTTP_REFERER=http://localhost:8081/kasuari/
+---
+2014/07/16 16:25:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff"' in C:\Server XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Server XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/JbtMzqLaY...')
+#1 C:\Server XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Server XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff
+HTTP_REFERER=http://localhost:8081/kasuari/
+---
+2014/07/16 16:25:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff"' in C:\Server XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Server XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/JbtMzqLaY...')
+#1 C:\Server XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Server XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff
+HTTP_REFERER=http://localhost:8081/kasuari/
+---
+2014/07/16 16:25:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/IczWvq5y_Cwwv_rBjOtT0w.woff"' in C:\Server XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Server XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/IczWvq5y_...')
+#1 C:\Server XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Server XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/IczWvq5y_Cwwv_rBjOtT0w.woff
+HTTP_REFERER=http://localhost:8081/kasuari/
+---
+2014/07/16 16:25:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff"' in C:\Server XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Server XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/JbtMzqLaY...')
+#1 C:\Server XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Server XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff
+HTTP_REFERER=http://localhost:8081/kasuari/input/adventure
+---
+2014/07/16 16:25:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/IczWvq5y_Cwwv_rBjOtT0w.woff"' in C:\Server XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Server XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/IczWvq5y_...')
+#1 C:\Server XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Server XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/IczWvq5y_Cwwv_rBjOtT0w.woff
+HTTP_REFERER=http://localhost:8081/kasuari/input/adventure
+---
+2014/07/16 16:26:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/IczWvq5y_Cwwv_rBjOtT0w.woff"' in C:\Server XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Server XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/IczWvq5y_...')
+#1 C:\Server XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Server XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/IczWvq5y_Cwwv_rBjOtT0w.woff
+HTTP_REFERER=http://localhost:8081/kasuari/
+---
+2014/07/16 16:26:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff"' in C:\Server XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Server XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/JbtMzqLaY...')
+#1 C:\Server XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Server XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff
+HTTP_REFERER=http://localhost:8081/kasuari/
+---
+2014/07/16 16:26:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/IczWvq5y_Cwwv_rBjOtT0w.woff"' in C:\Server XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Server XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/IczWvq5y_...')
+#1 C:\Server XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Server XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/IczWvq5y_Cwwv_rBjOtT0w.woff
+HTTP_REFERER=http://localhost:8081/kasuari/user/register
+---
+2014/07/16 16:26:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff"' in C:\Server XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Server XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/JbtMzqLaY...')
+#1 C:\Server XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Server XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff
+HTTP_REFERER=http://localhost:8081/kasuari/user/register
+---
+2014/07/16 16:27:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/IczWvq5y_Cwwv_rBjOtT0w.woff"' in C:\Server XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Server XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/IczWvq5y_...')
+#1 C:\Server XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Server XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/IczWvq5y_Cwwv_rBjOtT0w.woff
+HTTP_REFERER=http://localhost:8081/kasuari/site/login
+---
+2014/07/16 16:27:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff"' in C:\Server XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Server XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/JbtMzqLaY...')
+#1 C:\Server XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Server XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff
+HTTP_REFERER=http://localhost:8081/kasuari/site/login
+---
+2014/07/16 16:29:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/IczWvq5y_Cwwv_rBjOtT0w.woff"' in C:\Server XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Server XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/IczWvq5y_...')
+#1 C:\Server XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Server XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/IczWvq5y_Cwwv_rBjOtT0w.woff
+HTTP_REFERER=http://localhost:8081/kasuari/user/register
+---
+2014/07/16 16:29:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff"' in C:\Server XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Server XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/JbtMzqLaY...')
+#1 C:\Server XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Server XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff
+HTTP_REFERER=http://localhost:8081/kasuari/user/register
+---
+2014/07/16 16:29:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff"' in C:\Server XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Server XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/JbtMzqLaY...')
+#1 C:\Server XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Server XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff
+HTTP_REFERER=http://localhost:8081/kasuari/input/adventure
+---
+2014/07/16 16:29:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/IczWvq5y_Cwwv_rBjOtT0w.woff"' in C:\Server XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Server XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/IczWvq5y_...')
+#1 C:\Server XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Server XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/IczWvq5y_Cwwv_rBjOtT0w.woff
+HTTP_REFERER=http://localhost:8081/kasuari/input/adventure
+---
+2014/07/16 16:33:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/IczWvq5y_Cwwv_rBjOtT0w.woff"' in C:\Server XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Server XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/IczWvq5y_...')
+#1 C:\Server XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Server XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/IczWvq5y_Cwwv_rBjOtT0w.woff
+HTTP_REFERER=http://localhost:8081/kasuari/input/adventure
+---
+2014/07/16 16:33:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff"' in C:\Server XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Server XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/JbtMzqLaY...')
+#1 C:\Server XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Server XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff
+HTTP_REFERER=http://localhost:8081/kasuari/input/adventure
+---
+2014/07/16 16:33:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/IczWvq5y_Cwwv_rBjOtT0w.woff"' in C:\Server XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Server XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/IczWvq5y_...')
+#1 C:\Server XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Server XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/IczWvq5y_Cwwv_rBjOtT0w.woff
+HTTP_REFERER=http://localhost:8081/kasuari/input/adventure
+---
+2014/07/16 16:33:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff"' in C:\Server XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Server XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/JbtMzqLaY...')
+#1 C:\Server XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Server XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff
+HTTP_REFERER=http://localhost:8081/kasuari/input/adventure
+---
+2014/07/16 16:35:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/IczWvq5y_Cwwv_rBjOtT0w.woff"' in C:\Server XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Server XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/IczWvq5y_...')
+#1 C:\Server XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Server XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/IczWvq5y_Cwwv_rBjOtT0w.woff
+HTTP_REFERER=http://localhost:8081/kasuari/input/adventure
+---
+2014/07/16 16:35:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff"' in C:\Server XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Server XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/JbtMzqLaY...')
+#1 C:\Server XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Server XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/JbtMzqLaYbbbCL9X6EvaIxsxEYwM7FgeyaSgU71cLG0.woff
+HTTP_REFERER=http://localhost:8081/kasuari/input/adventure
+---
+2014/07/16 16:36:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "fonts/IczWvq5y_Cwwv_rBjOtT0w.woff"' in C:\Server XAMPP\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Server XAMPP\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/IczWvq5y_...')
+#1 C:\Server XAMPP\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Server XAMPP\htdocs\kasuari\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/kasuari/fonts/IczWvq5y_Cwwv_rBjOtT0w.woff
+HTTP_REFERER=http://localhost:8081/kasuari/input/inventory
+---

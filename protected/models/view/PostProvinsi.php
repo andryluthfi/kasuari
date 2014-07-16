@@ -56,8 +56,8 @@ class PostProvinsi extends BaseModel {
     public function attributeLabels() {
         return array(
             'propinsi_name' => 'Propinsi Name',
-            'jumlah_input' => 'Jumlah Input',
-            'jumlah_tps' => 'Jumlah Tps',
+            'jumlah_input' => 'Jumlah TPS ter-input',
+            'jumlah_tps' => 'Jumlah TPS',
             'count_jokowi' => 'Count Jokowi',
             'count_prabowo' => 'Count Prabowo',
         );

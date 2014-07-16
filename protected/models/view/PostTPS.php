@@ -56,8 +56,8 @@ class PostTPS extends BaseModel {
         return array(
             'tps_number' => 'Tps Number',
             'kelurahan_id' => 'Kelurahan',
-            'jumlah_input' => 'Jumlah Input',
-            'jumlah_tps' => 'Jumlah Tps',
+            'jumlah_input' => 'Jumlah TPS ter-input',
+            'jumlah_tps' => 'Jumlah TPS',
             'count_jokowi' => 'Count Jokowi',
             'count_prabowo' => 'Count Prabowo',
         );
