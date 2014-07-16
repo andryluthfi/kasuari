@@ -19,9 +19,9 @@
                         ));
                         ?>
 
-                        <div class="form-group <?= $model->hasErrors('username') ? "has-error" : "" ?>">
+                        <div class="form-group <?= $model->hasErrors('email') ? "has-error" : "" ?>">
                             <div class="col-lg-9">
-                                <?= $form->textField($model, 'username', array('class' => 'form-control', 'placeholder' => "username")) ?>
+                                <?= $form->textField($model, 'email', array('class' => 'form-control', 'placeholder' => "email")) ?>
                             </div>
                         </div>
 
