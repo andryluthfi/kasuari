@@ -107,8 +107,6 @@ class SiteController extends ControllerCommon {
             // validate user input and redirect to the previous page if valid
             if ($model->validate() && $model->login()) {
                 $this->redirect(array("input/adventure"));
-            } else {
-                Logger::dumpWeb($model->errors);
             }
         }
         // display the login form

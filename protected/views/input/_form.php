@@ -65,6 +65,7 @@
         <div class="offset3">
             <br/>
             <?php echo CHtml::submitButton($input->isNewRecord ? 'Submit' : 'Save', array('class' => 'btn btn-large btn-success')); ?>
+            <?php echo CHtml::htmlButton('<i class="glyphicon glyphicon-repeat"></i> Refresh', array('onClick' => 'window.location="' . Yii::app()->getRequest()->getUrl() . '"', 'class' => 'btn btn-large btn-info')) ?>
         </div>
     </div>
 
