@@ -43,6 +43,15 @@
                                     <?php echo $form->passwordField($model, 'password', array('size' => 60, 'maxlength' => 255, 'class' => 'form-control')); ?>
                                 </div>
                             </div>
+                            
+                            <div class="row-fluid">
+                                <div class="span6">
+                                    <?php echo $form->labelEx($model, 'verifyPassword'); ?>
+                                    <?php echo $form->passwordField($model, 'verifyPassword', array('size' => 60, 'maxlength' => 255, 'class' => 'form-control')); ?>
+                                </div>
+                                <div class="span6">
+                                </div>
+                            </div>
                             <div class="row-fluid">
                                 <div class="span6">
                                     <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class' => 'btn btn-large btn-success')); ?>

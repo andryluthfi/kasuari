@@ -13,10 +13,15 @@ class UserController extends ControllerCommon {
         if (isset($_POST['User'])) {
             $model->attributes = $_POST['User'];
             //$username->attributes = $_POST['Username'];
+//            $model->password = $model->hashPassword($model->password);
+//            $model->verifyPassword = $model->hashPassword($model->password);
+            //echo $model->password . " " . $model->verifyPassword;
             if ($model->validate()) {
                 $model->password = $model->hashPassword($model->password);
+                $model->verifyPassword = $model->hashPassword($model->verifyPassword);
+                //echo $model->password . " " . $model->verifyPassword;
                 //$username->user_id = 0;
-                if($model->save()) {
+                if ($model->save()) {
                     $this->redirect(array('site/index'));
                 }
 //                if ($username->validate()) {
@@ -28,6 +33,7 @@ class UserController extends ControllerCommon {
             }
         }
         $model->password = "";
+        $model->verifyPassword = "";
         $this->render('register', array(
             'model' => $model, //'username' => $username
         ));

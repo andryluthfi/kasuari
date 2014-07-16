@@ -14,7 +14,8 @@
  * @property integer $acc_status
  */
 class BUser extends BaseModel {
-
+    
+    public $verifyPassword;
     /**
      * @return string the associated database table name
      */
@@ -29,16 +30,17 @@ class BUser extends BaseModel {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('email, fname, lname, password', 'required'),
+            array('email, fname, lname, password, verifyPassword', 'required'),
             array('acc_status', 'numerical', 'integerOnly' => true),
             array('email', 'length', 'max' => 320),
             array('email', 'unique'),
             array('email', 'email'),
+            array('password', 'compare', 'compareAttribute' => 'verifyPassword', 'message' => 'Password tidak sama, mohon ulangi'),
             array('fname, lname, gender', 'length', 'max' => 45),
             array('birthday', 'safe'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, email, fname, lname, gender, birthday, acc_status, password', 'safe', 'on' => 'search'),
+            array('id, email, fname, lname, gender, birthday, acc_status, password, verifyPassword', 'safe', 'on' => 'search'),
         );
     }
 
