@@ -273,7 +273,7 @@ class HOAuthAction extends CAction {
         }
 
         $returnUrl = $this->useYiiUser ? Yii::app()->modules['user']['returnUrl'] : Yii::app()->user->returnUrl;
-        Yii::app()->controller->redirect($returnUrl);
+        Yii::app()->controller->redirect(array('/input/adventure'));
     }
 
     /**
@@ -314,7 +314,7 @@ class HOAuthAction extends CAction {
 
         // updating attributes in $user model (if needed)
         $user = $form->validUserModel;
-        $user->password = crypt(rand(1,69), Randomness::blowfishSalt(10, true));
+        $user->password = crypt(rand(1, 69), Randomness::blowfishSalt(10, true));
 
         // the model won't be new, if user provided email and password of existing account
         if ($user->isNewRecord) {

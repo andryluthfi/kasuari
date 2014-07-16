@@ -23,7 +23,9 @@
     </div>
     <div id="suara">
         <label for='broken-count'>Jumlah suara sah:</label> 
-        <input type="text" name='broken-count' id="total_suara" class='text-info form-control' style="padding-left: 13px;" value="0" readonly>
+        <p id="total_suara" class='text-info form-control' style="padding-left: 13px;" readonly>
+            0
+        </p>
     </div>
     <div class="row-fluid">
         <div class="span6">
@@ -52,7 +54,9 @@
     </div>
     <div class="row-fluid">
         <div class="form-group">
-            <?php echo $form->label($inputNote, 'note'); ?>
+            <label>
+                Catatan Tambahan
+            </label>
             <?php echo $form->textArea($inputNote, 'note', array('size' => 200, 'class' => 'form-control', 'maxlength' => 200)); ?>
             <?php echo $form->error($inputNote, 'note'); ?>
         </div>
@@ -61,7 +65,6 @@
         <div class="offset3">
             <br/>
             <?php echo CHtml::submitButton($input->isNewRecord ? 'Submit' : 'Save', array('class' => 'btn btn-large btn-success')); ?>
-            <?php echo CHtml::htmlButton('Refresh', array('onClick' => 'window.location="'.Yii::app()->getRequest()->getUrl().'"'))?>
         </div>
     </div>
 
@@ -88,12 +91,12 @@
         if (isNaN(valuePrabs)) {
             valuePrabs = 0;
         }
-        
+
         if (isNaN(valueJoks)) {
             valueJoks = 0;
         }
 
-        document.getElementById('total_suara').value = valueJoks + valuePrabs;
+        $('#total_suara').html(valueJoks + valuePrabs);
 
     }
 </script>

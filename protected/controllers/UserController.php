@@ -9,7 +9,7 @@ class UserController extends ControllerCommon {
     public function actionRegister() {
         $model = new User;
         //$username = new Username;
-
+        $passTemp = "";
         if (isset($_POST['User'])) {
             $model->attributes = $_POST['User'];
             //$username->attributes = $_POST['Username'];
@@ -17,12 +17,16 @@ class UserController extends ControllerCommon {
 //            $model->verifyPassword = $model->hashPassword($model->password);
             //echo $model->password . " " . $model->verifyPassword;
             if ($model->validate()) {
+                $passTemp = $model->password;
                 $model->password = $model->hashPassword($model->password);
                 $model->verifyPassword = $model->hashPassword($model->verifyPassword);
                 //echo $model->password . " " . $model->verifyPassword;
                 //$username->user_id = 0;
                 if ($model->save()) {
-                    $this->redirect(array('site/index'));
+                    $identity = new UserIdentity($model->email, $passTemp);
+                    $identity->authenticate();
+                    Yii::app()->user->login($identity, 0);
+                    $this->redirect(array('input/adventure'));
                 }
 //                if ($username->validate()) {
 //                    $model->save();

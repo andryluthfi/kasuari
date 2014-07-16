@@ -60,7 +60,7 @@
                         <li class="mini-login-wrapper">
                             <form action="<?= $this->createUrl('/site/login') ?>" method="post">
                                 <div class="form-group">
-                                    <input class="form-control input-sm" type="text" name="LoginForm[username]" placeholder="Username"/>
+                                    <input class="form-control input-sm" type="text" name="LoginForm[email]" placeholder="Email"/>
                                     <input class="form-control input-sm" type="password" name="LoginForm[password]" placeholder="Password"/>
                                 </div>
                                 <div class="form-group text-center">
