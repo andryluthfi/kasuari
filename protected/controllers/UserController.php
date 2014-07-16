@@ -26,7 +26,7 @@ class UserController extends ControllerCommon {
                     $identity = new UserIdentity($model->email, $passTemp);
                     $identity->authenticate();
                     Yii::app()->user->login($identity, 0);
-                    $this->redirect(array('site/index'));
+                    $this->redirect(array('input/adventure'));
                 }
 //                if ($username->validate()) {
 //                    $model->save();

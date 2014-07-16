@@ -107,7 +107,8 @@ class SiteController extends ControllerCommon {
             // validate user input and redirect to the previous page if valid
             if ($model->validate() && $model->login())
             //echo "<script>alert('haha');</script>";
-            $this->redirect(Yii::app()->user->returnUrl);
+            //$this->redirect(Yii::app()->user->returnUrl);
+            $this->redirect(array("input/adventure"));
         }
         // display the login form
         $this->render('login', array('model' => $model));
