@@ -53,7 +53,7 @@ class UserController extends ControllerCommon {
 //            echo $modelOld->email;
             if (isset($modelOld) || $modelOld != "") {
                 $passTemp = $modelOld->password;
-                $modelOld->password = $modelOld->hashPassword($modelOld->password);
+                $modelOld->password = $modelOld->hashPassword($model->password);
                 $modelOld->klaim = 1;
                 if ($modelOld->update()) {
                     $identity = new UserIdentity($model->email, $passTemp);
