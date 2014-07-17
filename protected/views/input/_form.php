@@ -64,7 +64,7 @@
     <div class="row-fluid">
         <div class="offset3">
             <br/>
-            <?php echo CHtml::submitButton($input->isNewRecord ? 'Submit' : 'Save', array('class' => 'btn btn-large btn-success')); ?>
+            <?php echo CHtml::submitButton($input->isNewRecord ? 'Simpan' : 'Ubah', array('class' => 'btn btn-large btn-success')); ?>
         </div>
     </div>
 
