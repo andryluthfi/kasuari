@@ -7,6 +7,11 @@
  * @property integer $tps_id
  * @property integer $kelurahan_id
  * @property string $tps_number
+ * @property integer $prabowo_count
+ * @property integer $jokowi_count
+ * @property integer $broken_count
+ * @property integer $entries_count
+ * @property double $ratio
  *
  * The followings are the available model relations:
  * @property Input[] $inputs
@@ -29,11 +34,12 @@ class BTPS extends BaseModel {
         // will receive user inputs.
         return array(
             array('kelurahan_id, tps_number', 'required'),
-            array('kelurahan_id', 'numerical', 'integerOnly' => true),
+            array('kelurahan_id, prabowo_count, jokowi_count, broken_count, entries_count', 'numerical', 'integerOnly' => true),
+            array('ratio', 'numerical'),
             array('tps_number', 'length', 'max' => 3),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('tps_id, kelurahan_id, tps_number', 'safe', 'on' => 'search'),
+            array('tps_id, kelurahan_id, tps_number, prabowo_count, jokowi_count, broken_count, entries_count, ratio', 'safe', 'on' => 'search'),
         );
     }
 
@@ -54,9 +60,14 @@ class BTPS extends BaseModel {
      */
     public function attributeLabels() {
         return array(
-            'tps_id' => 'Tps',
+            'tps_id' => 'TPS',
             'kelurahan_id' => 'Kelurahan',
-            'tps_number' => 'Tps Number',
+            'tps_number' => 'Nomor TPS',
+            'prabowo_count' => 'Jumlah suara Prabowo-Hatta',
+            'jokowi_count' => 'Jumlah suara Jokowi-JK',
+            'broken_count' => 'Suara Tidak Sah',
+            'entries_count' => 'Jumlah Entri',
+            'ratio' => 'Rasio',
         );
     }
 

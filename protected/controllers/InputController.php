@@ -145,6 +145,37 @@ class InputController extends ControllerLogin {
         $this->render('inventory', array('dataProvider' => $dataProvider, 'model' => $model, 'breadcrumb' => $breadcrumb));
     }
 
+    public function actionPopulate() {
+        $listTPS = TPS::model()->findAll(array('limit'=>100000));
+        foreach ($listTPS as $TPS) {
+            $inputs = $TPS->inputs;
+            if (count($inputs)) {
+                $map = array();
+                foreach ($inputs as $input) {
+					if(!isset($map[$input->prabowo_count . '-' . $input->jokowi_count . '-' . $input->broken_count])) {
+						$map[$input->prabowo_count . '-' . $input->jokowi_count . '-' . $input->broken_count] = 0;
+					}
+                    $map[$input->prabowo_count . '-' . $input->jokowi_count . '-' . $input->broken_count] ++;
+                }
+                asort($map);
+				
+				$values = array_keys($map);
+				
+                $data = $values[0];
+                $info = explode('-', $data);
+                $TPS->prabowo_count = $info[0];
+                $TPS->jokowi_count = $info[1];
+                $TPS->broken_count = $info[2];
+                $TPS->entries_count  = count($inputs);
+                $TPS->ratio = $map[$data] / array_sum($map);
+                if (!$TPS->save()) {
+                    break;
+                }
+				
+            }
+        }
+    }
+
     /**
      * Prioritize function for best candidate TPS
      * @return TPS best candidate TPS

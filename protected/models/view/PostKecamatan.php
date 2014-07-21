@@ -5,13 +5,11 @@
  *
  * The followings are the available columns in table 'post_kecamatan':
  * @property integer $kecamatan_id
- * @property string $kecamatan_name
  * @property string $kecamatan_number
  * @property integer $kota_id
- * @property string $jumlah_input
- * @property string $jumlah_tps
- * @property string $count_jokowi
  * @property string $count_prabowo
+ * @property string $count_jokowi
+ * @property string $count_broken
  */
 class PostKecamatan extends BaseModel {
 
@@ -29,15 +27,13 @@ class PostKecamatan extends BaseModel {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('kecamatan_name, kecamatan_number, kota_id', 'required'),
+            array('kecamatan_number, kota_id', 'required'),
             array('kecamatan_id, kota_id', 'numerical', 'integerOnly' => true),
-            array('kecamatan_name', 'length', 'max' => 50),
             array('kecamatan_number', 'length', 'max' => 7),
-            array('jumlah_input, jumlah_tps', 'length', 'max' => 21),
-            array('count_jokowi, count_prabowo', 'length', 'max' => 32),
+            array('count_prabowo, count_jokowi, count_broken', 'length', 'max' => 32),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('kecamatan_id, kecamatan_name, kecamatan_number, kota_id, jumlah_input, jumlah_tps, count_jokowi, count_prabowo', 'safe', 'on' => 'search'),
+            array('kecamatan_id, kecamatan_number, kota_id, count_prabowo, count_jokowi, count_broken', 'safe', 'on' => 'search'),
         );
     }
 
@@ -56,11 +52,12 @@ class PostKecamatan extends BaseModel {
      */
     public function attributeLabels() {
         return array(
-            'kecamatan_name' => 'Kecamatan Name',
-            'jumlah_input' => 'Jumlah TPS ter-input',
-            'jumlah_tps' => 'Jumlah TPS',
-            'count_jokowi' => 'Count Jokowi',
+            'kecamatan_id' => 'Kecamatan',
+            'kecamatan_number' => 'Kecamatan Number',
+            'kota_id' => 'Kota',
             'count_prabowo' => 'Count Prabowo',
+            'count_jokowi' => 'Count Jokowi',
+            'count_broken' => 'Count Broken',
         );
     }
 
@@ -82,13 +79,11 @@ class PostKecamatan extends BaseModel {
         $criteria = new CDbCriteria;
 
         $criteria->compare('kecamatan_id', $this->kecamatan_id);
-        $criteria->compare('kecamatan_name', $this->kecamatan_name, true);
         $criteria->compare('kecamatan_number', $this->kecamatan_number, true);
         $criteria->compare('kota_id', $this->kota_id);
-        $criteria->compare('jumlah_input', $this->jumlah_input, true);
-        $criteria->compare('jumlah_tps', $this->jumlah_tps, true);
-        $criteria->compare('count_jokowi', $this->count_jokowi, true);
         $criteria->compare('count_prabowo', $this->count_prabowo, true);
+        $criteria->compare('count_jokowi', $this->count_jokowi, true);
+        $criteria->compare('count_broken', $this->count_broken, true);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
@@ -120,7 +115,7 @@ class PostKecamatan extends BaseModel {
     public function getPrevLabel() {
         return 'kota';
     }
-    
+
     /**
      * Get the ID
      * @return integer
@@ -128,4 +123,5 @@ class PostKecamatan extends BaseModel {
     public function getID() {
         return $this->kecamatan_id;
     }
+
 }

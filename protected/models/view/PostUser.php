@@ -9,94 +9,89 @@
  * @property string $lname
  * @property string $total_post
  */
-class PostUser extends BaseModel
-{
-	/**
-	 * @return string the associated database table name
-	 */
-	public function tableName()
-	{
-		return 'post_user';
-	}
+class PostUser extends BaseModel {
 
-	/**
-	 * @return array validation rules for model attributes.
-	 */
-	public function rules()
-	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
-		return array(
-			array('fname, lname', 'required'),
-			array('user_id', 'numerical', 'integerOnly'=>true),
-			array('fname, lname', 'length', 'max'=>45),
-			array('total_post', 'length', 'max'=>21),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('user_id, fname, lname, total_post', 'safe', 'on'=>'search'),
-		);
-	}
+    /**
+     * @return string the associated database table name
+     */
+    public function tableName() {
+        return 'post_user';
+    }
 
-	/**
-	 * @return array relational rules.
-	 */
-	public function relations()
-	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-		);
-	}
+    /**
+     * @return array validation rules for model attributes.
+     */
+    public function rules() {
+        // NOTE: you should only define rules for those attributes that
+        // will receive user inputs.
+        return array(
+            array('fname, lname', 'required'),
+            array('user_id', 'numerical', 'integerOnly' => true),
+            array('fname, lname', 'length', 'max' => 45),
+            array('total_post', 'length', 'max' => 21),
+            // The following rule is used by search().
+            // @todo Please remove those attributes that should not be searched.
+            array('user_id, fname, lname, total_post', 'safe', 'on' => 'search'),
+        );
+    }
 
-	/**
-	 * @return array customized attribute labels (name=>label)
-	 */
-	public function attributeLabels()
-	{
-		return array(
-			'user_id' => 'User',
-			'fname' => 'Fname',
-			'lname' => 'Lname',
-			'total_post' => 'Total Post',
-		);
-	}
+    /**
+     * @return array relational rules.
+     */
+    public function relations() {
+        // NOTE: you may need to adjust the relation name and the related
+        // class name for the relations automatically generated below.
+        return array(
+        );
+    }
 
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 *
-	 * Typical usecase:
-	 * - Initialize the model fields with values from filter form.
-	 * - Execute this method to get CActiveDataProvider instance which will filter
-	 * models according to data in model fields.
-	 * - Pass data provider to CGridView, CListView or any similar widget.
-	 *
-	 * @return CActiveDataProvider the data provider that can return the models
-	 * based on the search/filter conditions.
-	 */
-	public function search()
-	{
-		// @todo Please modify the following code to remove attributes that should not be searched.
+    /**
+     * @return array customized attribute labels (name=>label)
+     */
+    public function attributeLabels() {
+        return array(
+            'user_id' => 'User',
+            'fname' => 'Fname',
+            'lname' => 'Lname',
+            'total_post' => 'Total Post',
+        );
+    }
 
-		$criteria=new CDbCriteria;
+    /**
+     * Retrieves a list of models based on the current search/filter conditions.
+     *
+     * Typical usecase:
+     * - Initialize the model fields with values from filter form.
+     * - Execute this method to get CActiveDataProvider instance which will filter
+     * models according to data in model fields.
+     * - Pass data provider to CGridView, CListView or any similar widget.
+     *
+     * @return CActiveDataProvider the data provider that can return the models
+     * based on the search/filter conditions.
+     */
+    public function search() {
+        // @todo Please modify the following code to remove attributes that should not be searched.
 
-		$criteria->compare('user_id',$this->user_id);
-		$criteria->compare('fname',$this->fname,true);
-		$criteria->compare('lname',$this->lname,true);
-		$criteria->compare('total_post',$this->total_post,true);
+        $criteria = new CDbCriteria;
 
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
-	}
+        $criteria->compare('user_id', $this->user_id);
+        $criteria->compare('fname', $this->fname, true);
+        $criteria->compare('lname', $this->lname, true);
+        $criteria->compare('total_post', $this->total_post, true);
 
-	/**
-	 * Returns the static model of the specified AR class.
-	 * Please note that you should have this exact method in all your CActiveRecord descendants!
-	 * @param string $className active record class name.
-	 * @return PostUser the static model class
-	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
-	}
+        return new CActiveDataProvider($this, array(
+            'criteria' => $criteria,
+        ));
+    }
+
+    /**
+     * Returns the static model of the specified AR class.
+     * Please note that you should have this exact method in all your CActiveRecord descendants!
+     * @param string $className active record class name.
+     * @return PostUser the static model class
+     */
+    public static function model($className = __CLASS__) {
+        return parent::model($className);
+    }
+
 }

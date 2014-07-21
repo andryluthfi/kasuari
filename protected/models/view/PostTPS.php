@@ -7,10 +7,9 @@
  * @property integer $tps_id
  * @property string $tps_number
  * @property integer $kelurahan_id
- * @property string $jumlah_input
- * @property string $jumlah_tps
- * @property string $count_jokowi
  * @property string $count_prabowo
+ * @property string $count_jokowi
+ * @property string $count_broken
  */
 class PostTPS extends BaseModel {
 
@@ -31,11 +30,10 @@ class PostTPS extends BaseModel {
             array('tps_number, kelurahan_id', 'required'),
             array('tps_id, kelurahan_id', 'numerical', 'integerOnly' => true),
             array('tps_number', 'length', 'max' => 3),
-            array('jumlah_input, jumlah_tps', 'length', 'max' => 21),
-            array('count_jokowi, count_prabowo', 'length', 'max' => 32),
+            array('count_prabowo, count_jokowi, count_broken', 'length', 'max' => 32),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('tps_id, tps_number, kelurahan_id, jumlah_input, jumlah_tps, count_jokowi, count_prabowo', 'safe', 'on' => 'search'),
+            array('tps_id, tps_number, kelurahan_id, count_prabowo, count_jokowi, count_broken', 'safe', 'on' => 'search'),
         );
     }
 
@@ -54,12 +52,12 @@ class PostTPS extends BaseModel {
      */
     public function attributeLabels() {
         return array(
+            'tps_id' => 'Tps',
             'tps_number' => 'Tps Number',
             'kelurahan_id' => 'Kelurahan',
-            'jumlah_input' => 'Jumlah TPS ter-input',
-            'jumlah_tps' => 'Jumlah TPS',
-            'count_jokowi' => 'Count Jokowi',
             'count_prabowo' => 'Count Prabowo',
+            'count_jokowi' => 'Count Jokowi',
+            'count_broken' => 'Count Broken',
         );
     }
 
@@ -83,10 +81,9 @@ class PostTPS extends BaseModel {
         $criteria->compare('tps_id', $this->tps_id);
         $criteria->compare('tps_number', $this->tps_number, true);
         $criteria->compare('kelurahan_id', $this->kelurahan_id);
-        $criteria->compare('jumlah_input', $this->jumlah_input, true);
-        $criteria->compare('jumlah_tps', $this->jumlah_tps, true);
-        $criteria->compare('count_jokowi', $this->count_jokowi, true);
         $criteria->compare('count_prabowo', $this->count_prabowo, true);
+        $criteria->compare('count_jokowi', $this->count_jokowi, true);
+        $criteria->compare('count_broken', $this->count_broken, true);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
