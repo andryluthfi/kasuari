@@ -12,7 +12,6 @@ class InputController extends ControllerLogin {
      */
     public function actionAdventure() {
         $tps = $this->prioritizeTPS();
-        Logger::dumpWeb($tps->tps_id);
         $input = new Input;
         $input->prabowo_count = 0;
         $input->jokowi_count = 0;
