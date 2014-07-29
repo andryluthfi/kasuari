@@ -10,6 +10,8 @@
  */
 class User extends BUser {
 
+    public $verifyPassword;
+
     /**
      * @return array validation rules for model attributes.
      */
@@ -24,7 +26,16 @@ class User extends BUser {
      * @return array customized attribute labels (name=>label)
      */
     public function attributeLabels() {
-        return CMap::mergeArray(parent::attributeLabels(), array());
+        return CMap::mergeArray(parent::attributeLabels(), array(
+                    'id' => 'ID',
+                    'password' => 'Password',
+                    'email' => 'Email',
+                    'fname' => 'Nama Depan',
+                    'lname' => 'Nama Belakang',
+                    'gender' => 'Gender',
+                    'birthday' => 'Birthday',
+                    'acc_status' => 'Acc Status',
+        ));
     }
 
     /**
@@ -56,19 +67,19 @@ class User extends BUser {
     public function findByEmail($email) {
         return self::model()->findByAttributes(array('email' => $email));
     }
-    
+
     public function findEmailToClaim($email) {
-        return self::model()->findByAttributes(array('email' => $email,'klaim' => 0));
+        return self::model()->findByAttributes(array('email' => $email, 'klaim' => 0));
     }
-    
+
     public function hashPassword($password) {
         return md5($password);
     }
-    
+
     public function validatePassword($password) {
         //return crypt($password, $this->password) == $this->password;
         //return $password === $this->password;
         return $this->hashPassword($password) === $this->password;
     }
-    
+
 }

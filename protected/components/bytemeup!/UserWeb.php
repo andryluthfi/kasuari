@@ -120,13 +120,16 @@ class UserWeb extends CWebUser {
     public function getPhotoURL() {
         $userAuth = UserOAuth::model()->findByAttributes(array('user_id' => $this->user()->id));
         $userID = $userAuth->getProfile()->identifier;
-        if (!$this->hasState('user-pictureURL')) {
+        $user = $this->user();
+        
+        if (!$user->photoURL) {
             $curl = Yii::app()->curl->run("http://graph.facebook.com/$userID/picture?redirect=false");
             if (!$curl->hasErrors()) {
-                $this->setState('user-pictureURL', preg_replace('/.*\"url\".*:.*\"(.+)\",.*/s', '$1', $curl->getData()));
+                $user->photoURL = preg_replace('/.*\"url\".*:.*\"(.+)\",.*/s', '$1', $curl->getData());
+                $user->save();
             }
         }
-        return $this->getState('user-pictureURL');
+        return $user->photoURL;
     }
 
 }

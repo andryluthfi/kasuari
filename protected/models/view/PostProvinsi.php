@@ -5,10 +5,12 @@
  *
  * The followings are the available columns in table 'post_provinsi':
  * @property integer $propinsi_id
+ * @property string $propinsi_name
  * @property string $propinsi_number
- * @property string $count_prabowo
+ * @property string $jumlah_input
+ * @property string $jumlah_tps
  * @property string $count_jokowi
- * @property string $count_broken
+ * @property string $count_prabowo
  */
 class PostProvinsi extends BaseModel {
 
@@ -26,13 +28,15 @@ class PostProvinsi extends BaseModel {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('propinsi_number', 'required'),
+            array('propinsi_name, propinsi_number', 'required'),
             array('propinsi_id', 'numerical', 'integerOnly' => true),
+            array('propinsi_name', 'length', 'max' => 50),
             array('propinsi_number', 'length', 'max' => 7),
-            array('count_prabowo, count_jokowi, count_broken', 'length', 'max' => 32),
+            array('jumlah_input, jumlah_tps', 'length', 'max' => 21),
+            array('count_jokowi, count_prabowo', 'length', 'max' => 32),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('propinsi_id, propinsi_number, count_prabowo, count_jokowi, count_broken', 'safe', 'on' => 'search'),
+            array('propinsi_id, propinsi_name, propinsi_number, jumlah_input, jumlah_tps, count_jokowi, count_prabowo', 'safe', 'on' => 'search'),
         );
     }
 
@@ -51,11 +55,11 @@ class PostProvinsi extends BaseModel {
      */
     public function attributeLabels() {
         return array(
-            'propinsi_id' => 'Propinsi',
-            'propinsi_number' => 'Propinsi Number',
-            'count_prabowo' => 'Count Prabowo',
-            'count_jokowi' => 'Count Jokowi',
-            'count_broken' => 'Count Broken',
+            'propinsi_name' => 'Nama Propinsi',
+            'jumlah_input' => 'Jumlah TPS ter-input',
+            'jumlah_tps' => 'Jumlah TPS',
+            'count_prabowo' => 'Jumlah Suara Prabowo-Hatta',
+            'count_jokowi' => 'Jumlah Suara Jokowi-JK',
         );
     }
 
@@ -77,10 +81,12 @@ class PostProvinsi extends BaseModel {
         $criteria = new CDbCriteria;
 
         $criteria->compare('propinsi_id', $this->propinsi_id);
+        $criteria->compare('propinsi_name', $this->propinsi_name, true);
         $criteria->compare('propinsi_number', $this->propinsi_number, true);
-        $criteria->compare('count_prabowo', $this->count_prabowo, true);
+        $criteria->compare('jumlah_input', $this->jumlah_input, true);
+        $criteria->compare('jumlah_tps', $this->jumlah_tps, true);
         $criteria->compare('count_jokowi', $this->count_jokowi, true);
-        $criteria->compare('count_broken', $this->count_broken, true);
+        $criteria->compare('count_prabowo', $this->count_prabowo, true);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,

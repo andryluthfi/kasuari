@@ -12,6 +12,7 @@ class InputController extends ControllerLogin {
      */
     public function actionAdventure() {
         $tps = $this->prioritizeTPS();
+        Logger::dumpWeb($tps->tps_id);
         $input = new Input;
         $input->prabowo_count = 0;
         $input->jokowi_count = 0;
@@ -33,6 +34,24 @@ class InputController extends ControllerLogin {
                         $inputNote->save();
                     }
                 }
+                $candidates = array();
+                foreach ($input->tps->inputs as $candidateInput) {
+                    $key = $candidateInput->prabowo_count . "-" . $candidateInput->jokowi_count . "-" . $candidateInput->broken_count;
+                    if (!isset($candidates[$key])) {
+                        $candidates[$key] = 0;
+                    }
+                    $candidates[$key] ++;
+                }
+                asort($candidates);
+                $values = array_keys($candidates);
+                $data = $values[0];
+                $info = explode('-', $data);
+                $input->tps->prabowo_count = $info[0];
+                $input->tps->jokowi_count = $info[1];
+                $input->tps->broken_count = $info[2];
+                $input->tps->entries_count = count($candidates);
+                $input->tps->ratio = $candidates[$data] / array_sum($candidates);
+                $input->tps->save();
                 $this->redirect(array('adventure'));
             }
         }
@@ -145,47 +164,16 @@ class InputController extends ControllerLogin {
         $this->render('inventory', array('dataProvider' => $dataProvider, 'model' => $model, 'breadcrumb' => $breadcrumb));
     }
 
-    public function actionPopulate() {
-        $listTPS = TPS::model()->findAll(array('limit'=>100000));
-        foreach ($listTPS as $TPS) {
-            $inputs = $TPS->inputs;
-            if (count($inputs)) {
-                $map = array();
-                foreach ($inputs as $input) {
-					if(!isset($map[$input->prabowo_count . '-' . $input->jokowi_count . '-' . $input->broken_count])) {
-						$map[$input->prabowo_count . '-' . $input->jokowi_count . '-' . $input->broken_count] = 0;
-					}
-                    $map[$input->prabowo_count . '-' . $input->jokowi_count . '-' . $input->broken_count] ++;
-                }
-                asort($map);
-				
-				$values = array_keys($map);
-				
-                $data = $values[0];
-                $info = explode('-', $data);
-                $TPS->prabowo_count = $info[0];
-                $TPS->jokowi_count = $info[1];
-                $TPS->broken_count = $info[2];
-                $TPS->entries_count  = count($inputs);
-                $TPS->ratio = $map[$data] / array_sum($map);
-                if (!$TPS->save()) {
-                    break;
-                }
-				
-            }
-        }
-    }
-
     /**
      * Prioritize function for best candidate TPS
      * @return TPS best candidate TPS
      */
     protected function prioritizeTPS() {
-        $candidateTPS = PostTPS::model()->find(array('condition' => 'jumlah_input = 0', 'order' => 'rand()'));
-        if (!$candidateTPS) {
-            $candidateTPS = PostTPS::model()->find(array('condition' => 'jumlah_input > 0', 'order' => 'rand()'));
-        }
-        return TPS::model()->findByPk($candidateTPS->tps_id);
+        $candidateTPS = TPS::model()->find(array('condition' => 'tps_id >= RAND() * (SELECT MAX(tps_id) FROM tps)'));
+//        if (!$candidateTPS) {
+//            $candidateTPS = TPS::model()->find(array('condition' => 'entries_count > 0', 'order' => 'rand()'));
+//        }
+        return $candidateTPS;
     }
 
     /**

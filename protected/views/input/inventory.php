@@ -19,7 +19,8 @@ $this->widget('zii.widgets.grid.CGridView', array(
     'columns' => array_merge(array_keys($model->attributeLabels()), array(
         array(
             'value' => 'CHtml::link("Telusuri", $this->grid->controller->createUrl("inventory", array("which"=>$data->nextLabel, "id"=>$data->ID)))',
-            'type' => 'raw'
+            'type' => 'raw',
+            'visible' => isset($_GET['which']) && $_GET['which'] !== 'TPS'
         )
     )),
     'itemsCssClass' => 'table table-striped table-hover font-smaller'

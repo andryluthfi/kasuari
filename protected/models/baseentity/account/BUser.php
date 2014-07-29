@@ -10,13 +10,16 @@
  * @property string $lname
  * @property string $gender
  * @property string $birthday
- * @property string $password
  * @property integer $acc_status
+ * @property string $password
  * @property integer $klaim
+ * @property string $photoURL
+ *
+ * The followings are the available model relations:
+ * @property Username $username
  */
 class BUser extends BaseModel {
-    
-    public $verifyPassword;
+
     /**
      * @return string the associated database table name
      */
@@ -31,17 +34,16 @@ class BUser extends BaseModel {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('email, fname, lname, password, verifyPassword', 'required'),
-            array('acc_status', 'numerical', 'integerOnly' => true),
+            array('email, fname, lname, password', 'required'),
+            array('acc_status, klaim', 'numerical', 'integerOnly' => true),
             array('email', 'length', 'max' => 320),
-            array('email', 'unique'),
-            array('email', 'email'),
-            array('password', 'compare', 'compareAttribute' => 'verifyPassword', 'message' => 'Password tidak sama, mohon ulangi'),
             array('fname, lname, gender', 'length', 'max' => 45),
+            array('password', 'length', 'max' => 255),
+            array('photoURL', 'length', 'max' => 2038),
             array('birthday', 'safe'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, email, fname, lname,klaim, gender, birthday, acc_status, password, verifyPassword', 'safe', 'on' => 'search'),
+            array('id, email, fname, lname, gender, birthday, acc_status, password, klaim, photoURL', 'safe', 'on' => 'search'),
         );
     }
 
@@ -52,7 +54,7 @@ class BUser extends BaseModel {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-            'username' => array(self::HAS_ONE, 'User', 'user_id'),
+            'username' => array(self::HAS_ONE, 'Username', 'user_id'),
         );
     }
 
@@ -62,13 +64,15 @@ class BUser extends BaseModel {
     public function attributeLabels() {
         return array(
             'id' => 'ID',
-            'password' => 'Password',
             'email' => 'Email',
-            'fname' => 'Nama Depan',
-            'lname' => 'Nama Belakang',
+            'fname' => 'Fname',
+            'lname' => 'Lname',
             'gender' => 'Gender',
             'birthday' => 'Birthday',
             'acc_status' => 'Acc Status',
+            'password' => 'Password',
+            'klaim' => 'Klaim',
+            'photoURL' => 'Photo Url',
         );
     }
 
@@ -96,7 +100,9 @@ class BUser extends BaseModel {
         $criteria->compare('gender', $this->gender, true);
         $criteria->compare('birthday', $this->birthday, true);
         $criteria->compare('acc_status', $this->acc_status);
-        $criteria->compare('password', $this->password);
+        $criteria->compare('password', $this->password, true);
+        $criteria->compare('klaim', $this->klaim);
+        $criteria->compare('photoURL', $this->photoURL, true);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
